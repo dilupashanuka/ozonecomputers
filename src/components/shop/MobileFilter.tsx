@@ -12,12 +12,12 @@ export function MobileFilter({ currentCategory, categories, availableSpecs, avai
 }) {
   return (
     <Sheet>
-      <SheetTrigger asChild>
+      <SheetTrigger render={
         <div className="lg:hidden flex items-center gap-4 px-10 py-5 rounded-2xl bg-white/[0.03] border border-white/5 text-[11px] font-black uppercase tracking-[0.4em] text-white cursor-pointer active:scale-95 transition-all italic shadow-2xl backdrop-blur-3xl group">
           <SlidersHorizontal className="w-5 h-5 text-primary animate-pulse group-hover:scale-110 transition-transform" />
           FILTER_LAB_NODE
         </div>
-      </SheetTrigger>
+      } />
       <SheetContent side="left" className="w-[340px] p-0 bg-[#050811]/95 border-white/10 overflow-y-auto custom-scrollbar backdrop-blur-3xl">
         <div className="p-10">
           <SheetHeader className="mb-16">

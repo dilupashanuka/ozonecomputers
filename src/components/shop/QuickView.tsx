@@ -24,9 +24,7 @@ export function QuickView({ product, children }: { product: Product, children: R
 
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        {children}
-      </DialogTrigger>
+      <DialogTrigger render={children} />
       <DialogContent className="max-w-6xl p-0 overflow-hidden bg-[#050811]/95 border border-white/10 rounded-[4rem] shadow-[0_100px_200px_rgba(0,0,0,1)] backdrop-blur-3xl">
         <div className="grid grid-cols-1 md:grid-cols-2 h-full max-h-[85vh] overflow-y-auto custom-scrollbar">
           {/* Left Column: Image */}
