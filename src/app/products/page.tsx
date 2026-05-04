@@ -1,5 +1,6 @@
 import { createClient } from '@/utils/supabase/server';
 import { ShoppingCart, Search, Grid, List, ChevronDown, Sparkles, Activity, Terminal } from 'lucide-react';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { ProductCard } from '@/components/shop/ProductCard';
 import { ShopSidebar } from '@/components/shop/ShopSidebar';
@@ -215,13 +216,12 @@ export default async function ProductsPage(props: {
                    <p className="text-slate-500 font-black uppercase tracking-[0.5em] text-2xl italic leading-none">NO INVENTORY DETECTED</p>
                    <p className="text-slate-700 text-[10px] font-black uppercase tracking-[0.3em] italic">RECONFIGURE SCAN FILTERS OR SEARCH PARAMETERS</p>
                 </div>
-                <Button 
-                   onClick={() => window.location.href = '/products'}
-                   variant="outline" 
-                   className="h-16 px-10 border-white/10 bg-white/5 font-black uppercase tracking-[0.3em] italic text-xs rounded-2xl"
+                <Link 
+                   href="/products"
+                   className="h-16 px-10 border border-white/10 bg-white/5 font-black uppercase tracking-[0.3em] italic text-xs rounded-2xl flex items-center justify-center hover:bg-white/10 transition-colors"
                 >
                    RESET SCAN CORE
-                </Button>
+                </Link>
               </div>
             )}
           </div>
