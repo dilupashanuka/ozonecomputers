@@ -78,7 +78,7 @@ export default async function ProductsPage(props: {
   const formattedAvailableBrands = Array.from(availableBrands).sort();
 
   // 2. Build the main query
-  let query = supabase.from('products').select('*');
+  let query = supabase.from('products').select('*', { count: 'exact' });
   
   if (inventory) {
     query = query.eq('inventory_type', inventory);
@@ -128,12 +128,12 @@ export default async function ProductsPage(props: {
   else query = query.order('created_at', { ascending: false });
 
   // Count total for pagination
-  const { count: totalCount } = await query.select('id', { count: 'exact', head: true });
+  // Pagination is applied below
 
   // Apply pagination
   query = query.range(offset, offset + PAGE_SIZE - 1);
   
-  const { data: products } = await query;
+  const { data: products, count: totalCount } = await query;
 
   const mappedProducts = products?.map(p => ({
     ...p,
