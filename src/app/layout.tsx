@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   },
   description: "Your elite destination for high-impact gaming architecture, precision workstations, and mission-critical tech in Sri Lanka. Operational across Deiyandara, Kamburupitiya, and Embilipitiya.",
   keywords: "Ozone Labs, Ozone Computers, computer shop Sri Lanka, gaming PCs, custom builds, tech retail, high-end workstations",
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: 'OZONE LABS',
     description: 'ELITE TECH ARCHITECTURE across Sri Lanka.',
