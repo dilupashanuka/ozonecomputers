@@ -17,7 +17,9 @@ import {
   Terminal,
   Cpu,
   ShieldCheck,
-  Globe
+  Globe,
+  Grid,
+  Mail
 } from 'lucide-react';
 import Link from 'next/link';
 
