@@ -102,32 +102,32 @@ export function ProductForm({ initialData, categories: initialCategories, fixedI
       <div className="grid lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
           {/* General Info */}
-          <Card className="bg-slate-900/40 border-white/5 backdrop-blur-md">
+          <Card className="bg-white/40 border-black/5 backdrop-blur-md">
             <CardHeader>
-              <CardTitle className="text-white text-xl">General Information</CardTitle>
+              <CardTitle className="text-slate-900 text-xl">General Information</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="space-y-2">
-                <Label className="text-slate-300 font-bold text-[11px] uppercase tracking-wider">Product Title</Label>
+                <Label className="text-slate-700 font-bold text-[11px] uppercase tracking-wider">Product Title</Label>
                 <Input 
                   name="title" 
                   defaultValue={initialData?.title}
                   required 
                   placeholder="e.g., Apple MacBook Pro M3" 
-                  className="bg-white/5 border-white/10 text-white h-12"
+                  className="bg-black/5 border-black/10 text-slate-900 h-12"
                 />
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label className="text-slate-300 font-bold text-[11px] uppercase tracking-wider">Inventory Type</Label>
+                  <Label className="text-slate-700 font-bold text-[11px] uppercase tracking-wider">Inventory Type</Label>
                   <select 
                     name="inventory_type" 
                     value={inventoryType}
                     onChange={(e) => setInventoryType(e.target.value)}
                     required
                     disabled={!!fixedInventoryType}
-                    className="w-full bg-white/5 border border-white/10 text-white h-12 rounded-lg px-4 focus:outline-none focus:border-blue-500/50"
+                    className="w-full bg-black/5 border border-black/10 text-slate-900 h-12 rounded-lg px-4 focus:outline-none focus:border-blue-500/50"
                   >
                     <option value="" disabled>Select Inventory</option>
                     <option value="workstations">Workstations (Computers & Laptops)</option>
@@ -139,7 +139,7 @@ export function ProductForm({ initialData, categories: initialCategories, fixedI
 
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <Label className="text-slate-300 font-bold text-[11px] uppercase tracking-wider">Category</Label>
+                    <Label className="text-slate-700 font-bold text-[11px] uppercase tracking-wider">Category</Label>
                     {inventoryType && (
                       <button 
                         type="button" 
@@ -157,14 +157,14 @@ export function ProductForm({ initialData, categories: initialCategories, fixedI
                         value={newCategoryName}
                         onChange={(e) => setNewCategoryName(e.target.value)}
                         placeholder="New category name..."
-                        className="bg-white/5 border-white/10 text-white h-12 flex-1"
+                        className="bg-black/5 border-black/10 text-slate-900 h-12 flex-1"
                         autoFocus
                       />
                       <Button 
                         type="button" 
                         onClick={handleQuickAddCategory}
                         disabled={isPending || !newCategoryName}
-                        className="h-12 w-12 bg-primary hover:bg-blue-600 text-white"
+                        className="h-12 w-12 bg-primary hover:bg-blue-600 text-slate-900"
                       >
                         {isPending ? <Package className="w-4 h-4 animate-spin" /> : <Check className="w-4 h-4" />}
                       </Button>
@@ -175,14 +175,14 @@ export function ProductForm({ initialData, categories: initialCategories, fixedI
                       value={selectedCategoryId}
                       onChange={(e) => setSelectedCategoryId(e.target.value)}
                       required
-                      className="w-full bg-white/5 border border-white/10 text-white h-12 rounded-lg px-4 focus:outline-none focus:border-blue-500/50"
+                      className="w-full bg-black/5 border border-black/10 text-slate-900 h-12 rounded-lg px-4 focus:outline-none focus:border-blue-500/50"
                     >
                       <option value="" disabled>Select Category</option>
                       {filteredCategories.filter((c: any) => !c.parent_id).map((parent: any) => (
-                        <optgroup key={parent.id} label={parent.name} className="bg-slate-900">
-                          <option value={parent.id} className="bg-slate-900">{parent.name} (Main)</option>
+                        <optgroup key={parent.id} label={parent.name} className="bg-slate-100">
+                          <option value={parent.id} className="bg-slate-100">{parent.name} (Main)</option>
                           {filteredCategories.filter((c: any) => c.parent_id === parent.id).map((child: any) => (
-                            <option key={child.id} value={child.id} className="bg-slate-900 pl-4">
+                            <option key={child.id} value={child.id} className="bg-slate-100 pl-4">
                               ↳ {child.name}
                             </option>
                           ))}
@@ -194,37 +194,37 @@ export function ProductForm({ initialData, categories: initialCategories, fixedI
               </div>
 
               <div className="space-y-2">
-                <Label className="text-slate-300 font-bold text-[11px] uppercase tracking-wider">Description</Label>
+                <Label className="text-slate-700 font-bold text-[11px] uppercase tracking-wider">Description</Label>
                 <Textarea 
                   name="description" 
                   defaultValue={initialData?.description}
                   placeholder="Detailed product description..." 
-                  className="bg-white/5 border-white/10 text-white min-h-[120px] resize-y"
+                  className="bg-black/5 border-black/10 text-slate-900 min-h-[120px] resize-y"
                 />
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="space-y-2">
-                  <Label className="text-slate-300 font-bold text-[11px] uppercase tracking-wider">Brand</Label>
-                  <Input name="brand" defaultValue={initialData?.brand} placeholder="e.g., Apple, Asus" className="bg-white/5 border-white/10 text-white h-12" />
+                  <Label className="text-slate-700 font-bold text-[11px] uppercase tracking-wider">Brand</Label>
+                  <Input name="brand" defaultValue={initialData?.brand} placeholder="e.g., Apple, Asus" className="bg-black/5 border-black/10 text-slate-900 h-12" />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-slate-300 font-bold text-[11px] uppercase tracking-wider">Model</Label>
-                  <Input name="model" defaultValue={initialData?.model} placeholder="e.g., iPhone 15 Pro" className="bg-white/5 border-white/10 text-white h-12" />
+                  <Label className="text-slate-700 font-bold text-[11px] uppercase tracking-wider">Model</Label>
+                  <Input name="model" defaultValue={initialData?.model} placeholder="e.g., iPhone 15 Pro" className="bg-black/5 border-black/10 text-slate-900 h-12" />
                 </div>
                 <div className="space-y-2">
-                  <Label className="text-slate-300 font-bold text-[11px] uppercase tracking-wider">Price (LKR)</Label>
-                  <Input name="price" type="number" defaultValue={initialData?.price} required className="bg-white/5 border-white/10 text-white h-12" />
+                  <Label className="text-slate-700 font-bold text-[11px] uppercase tracking-wider">Price (LKR)</Label>
+                  <Input name="price" type="number" defaultValue={initialData?.price} required className="bg-black/5 border-black/10 text-slate-900 h-12" />
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Dynamic Specifications */}
-          <Card className="bg-slate-900/40 border-white/5 backdrop-blur-md">
+          <Card className="bg-white/40 border-black/5 backdrop-blur-md">
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
-                <CardTitle className="text-white text-xl">Technical Specifications</CardTitle>
+                <CardTitle className="text-slate-900 text-xl">Technical Specifications</CardTitle>
                 <CardDescription className="text-slate-500">Add custom attributes for filtering.</CardDescription>
               </div>
               <Button type="button" onClick={addSpec} variant="outline" size="sm" className="bg-blue-600/10 border-blue-500/20 text-blue-400 hover:bg-blue-600/20">
@@ -240,7 +240,7 @@ export function ProductForm({ initialData, categories: initialCategories, fixedI
                       placeholder="e.g., RAM" 
                       value={spec.key} 
                       onChange={(e) => updateSpec(index, 'key', e.target.value)}
-                      className="bg-white/5 border-white/10 text-white"
+                      className="bg-black/5 border-black/10 text-slate-900"
                     />
                   </div>
                   <div className="flex-1 space-y-2">
@@ -249,7 +249,7 @@ export function ProductForm({ initialData, categories: initialCategories, fixedI
                       placeholder="e.g., 16GB" 
                       value={spec.value} 
                       onChange={(e) => updateSpec(index, 'value', e.target.value)}
-                      className="bg-white/5 border-white/10 text-white"
+                      className="bg-black/5 border-black/10 text-slate-900"
                     />
                   </div>
                   <Button 
@@ -269,9 +269,9 @@ export function ProductForm({ initialData, categories: initialCategories, fixedI
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-900/40 border-white/5 backdrop-blur-md">
+          <Card className="bg-white/40 border-black/5 backdrop-blur-md">
             <CardHeader>
-              <CardTitle className="text-white text-xl">Media Assets</CardTitle>
+              <CardTitle className="text-slate-900 text-xl">Media Assets</CardTitle>
             </CardHeader>
             <CardContent>
               <AdminMediaUpload name="images" multiple initialImages={initialData?.images} />
@@ -280,20 +280,20 @@ export function ProductForm({ initialData, categories: initialCategories, fixedI
         </div>
 
         <div className="space-y-8">
-          <Card className="bg-slate-900/40 border-white/5 backdrop-blur-md">
+          <Card className="bg-white/40 border-black/5 backdrop-blur-md">
             <CardHeader>
-              <CardTitle className="text-white text-xl">Publish Settings</CardTitle>
+              <CardTitle className="text-slate-900 text-xl">Publish Settings</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5">
+              <div className="flex items-center justify-between p-4 rounded-xl bg-black/5 border border-black/5">
                 <div className="space-y-0.5">
-                  <Label className="text-white font-bold">In Stock</Label>
+                  <Label className="text-slate-900 font-bold">In Stock</Label>
                   <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Visible to customers</p>
                 </div>
                 <Switch name="in_stock" defaultChecked={initialData?.in_stock ?? true} />
               </div>
 
-              <Button type="submit" className="w-full h-14 bg-blue-600 hover:bg-blue-500 text-white font-black tracking-widest rounded-2xl shadow-xl shadow-blue-600/20 transition-all active:scale-95 uppercase">
+              <Button type="submit" className="w-full h-14 bg-blue-600 hover:bg-blue-500 text-slate-900 font-black tracking-widest rounded-2xl shadow-xl shadow-blue-600/20 transition-all active:scale-95 uppercase">
                 {initialData ? "Update Product" : "Deploy to Store"}
               </Button>
             </CardContent>
@@ -308,8 +308,8 @@ export function ProductForm({ initialData, categories: initialCategories, fixedI
                    <Cpu className="w-5 h-5" />}
                 </div>
                 <div className="space-y-1">
-                  <p className="text-sm font-bold text-white">Pro Tip</p>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-sm font-bold text-slate-900">Pro Tip</p>
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     Adding accurate specifications helps customers filter your products more effectively in the store.
                   </p>
                 </div>

@@ -25,10 +25,10 @@ export function QuickView({ product, children }: { product: Product, children: R
   return (
     <Dialog>
       <DialogTrigger render={children} />
-      <DialogContent className="max-w-6xl p-0 overflow-hidden bg-[#050811]/95 border border-white/10 rounded-[4rem] shadow-[0_100px_200px_rgba(0,0,0,1)] backdrop-blur-3xl">
+      <DialogContent className="max-w-6xl p-0 overflow-hidden bg-slate-50/95 border border-black/10 rounded-[4rem] shadow-[0_100px_200px_rgba(0,0,0,1)] backdrop-blur-3xl">
         <div className="grid grid-cols-1 md:grid-cols-2 h-full max-h-[85vh] overflow-y-auto custom-scrollbar">
           {/* Left Column: Image */}
-          <div className="relative bg-[#050811] flex items-center justify-center p-16 min-h-[500px] md:h-auto group">
+          <div className="relative bg-slate-50 flex items-center justify-center p-16 min-h-[500px] md:h-auto group">
              <div className="absolute inset-0 bg-primary/5 blur-[100px] pointer-events-none opacity-50" />
             {product.image_url ? (
               <Image 
@@ -42,9 +42,9 @@ export function QuickView({ product, children }: { product: Product, children: R
               <Terminal className="w-40 h-40 text-slate-800 relative z-10" />
             )}
             
-            <div className="absolute top-12 left-12 z-20 flex items-center gap-4 px-6 py-3 bg-black/60 backdrop-blur-3xl border border-white/10 rounded-2xl shadow-2xl">
+            <div className="absolute top-12 left-12 z-20 flex items-center gap-4 px-6 py-3 bg-black/60 backdrop-blur-3xl border border-black/10 rounded-2xl shadow-2xl">
                <Activity className="w-5 h-5 text-primary animate-pulse" />
-               <span className="text-[10px] font-black text-white uppercase tracking-[0.4em] italic leading-none">LAB STATUS: READY</span>
+               <span className="text-[10px] font-black text-slate-900 uppercase tracking-[0.4em] italic leading-none">LAB STATUS: READY</span>
             </div>
             
             <div className="absolute bottom-12 left-12 z-20 flex items-center gap-3 text-slate-800">
@@ -65,30 +65,30 @@ export function QuickView({ product, children }: { product: Product, children: R
                        <p className="text-[11px] text-primary font-black uppercase tracking-[0.6em] italic leading-none">{product.brand} CORE</p>
                     </div>
                  )}
-                 <DialogTitle className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter italic leading-[0.85] drop-shadow-2xl">
+                 <DialogTitle className="text-4xl md:text-6xl font-black text-slate-900 uppercase tracking-tighter italic leading-[0.85] drop-shadow-2xl">
                    {product.title}
                  </DialogTitle>
               </div>
               
               <div className="flex flex-wrap items-center gap-4">
-                <Badge className="bg-white/5 text-slate-500 border-white/5 px-6 py-2.5 font-black uppercase tracking-[0.3em] text-[10px] italic rounded-xl">{product.category}</Badge>
+                <Badge className="bg-black/5 text-slate-500 border-black/5 px-6 py-2.5 font-black uppercase tracking-[0.3em] text-[10px] italic rounded-xl">{product.category}</Badge>
                 {product.in_stock ? (
                   <Badge className="bg-primary/10 text-primary border-primary/20 px-6 py-2.5 font-black uppercase tracking-[0.3em] text-[10px] italic rounded-xl shadow-[0_0_20px_rgba(239,68,68,0.3)]">IN_STOCK</Badge>
                 ) : (
-                  <Badge className="bg-white/5 text-slate-800 border-white/5 px-6 py-2.5 font-black uppercase tracking-[0.3em] text-[10px] italic rounded-xl">ALLOCATED</Badge>
+                  <Badge className="bg-black/5 text-slate-800 border-black/5 px-6 py-2.5 font-black uppercase tracking-[0.3em] text-[10px] italic rounded-xl">ALLOCATED</Badge>
                 )}
               </div>
               
-              <div className="text-6xl md:text-7xl font-black text-white italic tracking-tighter pt-4 drop-shadow-2xl">
+              <div className="text-6xl md:text-7xl font-black text-slate-900 italic tracking-tighter pt-4 drop-shadow-2xl">
                 {product.price ? `Rs. ${product.price.toLocaleString()}` : 'ENQUIRE'}
               </div>
             </div>
 
-            <div className="flex flex-col gap-6 pb-12 border-b border-white/5 relative z-10">
+            <div className="flex flex-col gap-6 pb-12 border-b border-black/5 relative z-10">
               <a 
                 href={whatsappUrl}
                 target="_blank"
-                className="w-full h-20 bg-primary text-white font-black uppercase tracking-[0.5em] text-sm rounded-[1.5rem] flex items-center justify-center gap-6 hover:bg-primary/90 transition-all shadow-[0_20px_60px_rgba(239,68,68,0.4)] transform hover:-translate-y-1.5 active:scale-95 italic"
+                className="w-full h-20 bg-primary text-slate-900 font-black uppercase tracking-[0.5em] text-sm rounded-[1.5rem] flex items-center justify-center gap-6 hover:bg-primary/90 transition-all shadow-[0_20px_60px_rgba(239,68,68,0.4)] transform hover:-translate-y-1.5 active:scale-95 italic"
               >
                 <MessageCircle className="w-8 h-8" />
                 INITIALIZE ORDER
@@ -103,7 +103,7 @@ export function QuickView({ product, children }: { product: Product, children: R
             <div className="space-y-8 flex-1 relative z-10">
               <div className="flex items-center gap-6">
                  <p className="text-[11px] text-slate-800 font-black uppercase tracking-[0.6em] italic leading-none">LAB INTEL REPORT</p>
-                 <div className="h-px flex-1 bg-white/5" />
+                 <div className="h-px flex-1 bg-black/5" />
               </div>
               
               {product.specifications && Object.keys(product.specifications).length > 0 ? (
@@ -111,10 +111,10 @@ export function QuickView({ product, children }: { product: Product, children: R
                   {Object.entries(product.specifications).slice(0, 8).map(([key, value], idx) => (
                     <div 
                       key={key} 
-                      className="flex items-center justify-between p-6 rounded-2xl bg-white/[0.02] border border-white/5 group/row hover:border-primary/40 transition-all duration-700"
+                      className="flex items-center justify-between p-6 rounded-2xl bg-black/[0.02] border border-black/5 group/row hover:border-primary/40 transition-all duration-700"
                     >
                       <div className="text-[11px] text-slate-800 font-black uppercase tracking-[0.3em] italic group-hover/row:text-primary transition-colors">{key}</div>
-                      <div className="text-sm font-black text-white italic uppercase tracking-tight">{value as string}</div>
+                      <div className="text-sm font-black text-slate-900 italic uppercase tracking-tight">{value as string}</div>
                     </div>
                   ))}
                 </div>

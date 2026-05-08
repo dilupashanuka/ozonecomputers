@@ -29,14 +29,14 @@ export function ContactForm() {
   };
 
   return (
-    <div className="p-8 md:p-12 rounded-[3rem] bg-slate-900/40 border border-white/5 glass backdrop-blur-xl relative">
+    <div className="p-8 md:p-12 rounded-[3rem] bg-white/40 border border-black/5 glass backdrop-blur-xl relative">
       <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-[50px] rounded-full" />
       <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/20 blur-[50px] rounded-full" />
       
       <div className="relative z-10">
         <div className="mb-8">
-          <h3 className="text-3xl font-black text-white tracking-tight mb-2">Send us a Message</h3>
-          <p className="text-slate-400 font-medium">Fill out the form below and our team will get back to you within 24 hours.</p>
+          <h3 className="text-3xl font-black text-slate-900 tracking-tight mb-2">Send us a Message</h3>
+          <p className="text-slate-600 font-medium">Fill out the form below and our team will get back to you within 24 hours.</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -47,7 +47,7 @@ export function ContactForm() {
                 name="name" 
                 placeholder="John Doe" 
                 required 
-                className="bg-slate-950/50 border-white/10 text-white h-12 focus:border-primary/50"
+                className="bg-slate-950/50 border-black/10 text-slate-900 h-12 focus:border-primary/50"
               />
             </div>
             <div className="space-y-2">
@@ -57,7 +57,7 @@ export function ContactForm() {
                 type="email" 
                 placeholder="john@example.com" 
                 required 
-                className="bg-slate-950/50 border-white/10 text-white h-12 focus:border-primary/50"
+                className="bg-slate-950/50 border-black/10 text-slate-900 h-12 focus:border-primary/50"
               />
             </div>
           </div>
@@ -67,7 +67,7 @@ export function ContactForm() {
             <Input 
               name="subject" 
               placeholder="How can we help?" 
-              className="bg-slate-950/50 border-white/10 text-white h-12 focus:border-primary/50"
+              className="bg-slate-950/50 border-black/10 text-slate-900 h-12 focus:border-primary/50"
             />
           </div>
 
@@ -77,7 +77,7 @@ export function ContactForm() {
               name="message" 
               placeholder="Tell us about your inquiry..." 
               required 
-              className="bg-slate-950/50 border-white/10 text-white min-h-[150px] resize-none focus:border-primary/50"
+              className="bg-slate-950/50 border-black/10 text-slate-900 min-h-[150px] resize-none focus:border-primary/50"
             />
           </div>
 

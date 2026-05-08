@@ -47,7 +47,7 @@ export default function WishlistPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#050811] pt-48 pb-64 px-6 relative overflow-hidden">
+    <main className="min-h-screen bg-slate-50 pt-48 pb-64 px-6 relative overflow-hidden">
        {/* Background Ambience */}
        <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-primary/5 blur-[200px] rounded-full -mr-96 -mt-96 pointer-events-none" />
        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full -ml-48 -mb-48 pointer-events-none" />
@@ -55,12 +55,12 @@ export default function WishlistPage() {
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center gap-14 mb-32 border-b border-white/5 pb-24 relative">
+        <div className="flex flex-col md:flex-row md:items-center gap-14 mb-32 border-b border-black/5 pb-24 relative">
           <div className="absolute -top-12 left-0 text-[10px] font-black text-slate-800 uppercase tracking-[0.5em] italic">LAB_SECTOR_ARCHIVE</div>
           
           <Link 
             href="/products"
-            className="w-20 h-20 flex items-center justify-center bg-white/[0.02] rounded-[1.5rem] border border-white/5 text-slate-700 hover:text-primary hover:border-primary/50 transition-all duration-700 group shadow-2xl"
+            className="w-20 h-20 flex items-center justify-center bg-black/[0.02] rounded-[1.5rem] border border-black/5 text-slate-700 hover:text-primary hover:border-primary/50 transition-all duration-700 group shadow-2xl"
           >
             <ArrowLeft className="w-8 h-8 group-hover:-translate-x-2 transition-transform duration-500" />
           </Link>
@@ -72,7 +72,7 @@ export default function WishlistPage() {
                </div>
                <Terminal className="w-6 h-6 text-slate-800" />
             </div>
-            <h1 className="text-6xl md:text-[7rem] font-black text-white uppercase italic tracking-tighter leading-[0.8] drop-shadow-2xl">
+            <h1 className="text-6xl md:text-[7rem] font-black text-slate-900 uppercase italic tracking-tighter leading-[0.8] drop-shadow-2xl">
               LAB <span className="text-primary italic">ARCHIVE</span>
             </h1>
             <div className="flex items-center gap-6 text-slate-600">
@@ -88,7 +88,7 @@ export default function WishlistPage() {
         {loading && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className="aspect-square rounded-[4rem] bg-white/[0.01] border border-white/5 animate-pulse" />
+              <div key={i} className="aspect-square rounded-[4rem] bg-black/[0.01] border border-black/5 animate-pulse" />
             ))}
           </div>
         )}
@@ -117,14 +117,14 @@ export default function WishlistPage() {
 
         {/* Empty State */}
         {!loading && products.length === 0 && (
-          <div className="flex flex-col items-center justify-center py-56 gap-14 text-center bg-white/[0.01] rounded-[6rem] border-2 border-dashed border-white/5 group shadow-[0_50px_150px_rgba(0,0,0,0.9)] relative overflow-hidden">
+          <div className="flex flex-col items-center justify-center py-56 gap-14 text-center bg-black/[0.01] rounded-[6rem] border-2 border-dashed border-black/5 group shadow-[0_50px_150px_rgba(0,0,0,0.9)] relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
             
-            <div className="w-40 h-40 rounded-[2.5rem] bg-white/[0.02] border border-white/5 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/40 transition-all duration-1000 shadow-2xl relative z-10">
+            <div className="w-40 h-40 rounded-[2.5rem] bg-black/[0.02] border border-black/5 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/40 transition-all duration-1000 shadow-2xl relative z-10">
               <Heart className="w-16 h-16 text-slate-800 group-hover:text-primary transition-all duration-1000 transform group-hover:scale-110" />
             </div>
             <div className="space-y-6 relative z-10">
-              <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter italic leading-none drop-shadow-2xl">
+              <h2 className="text-5xl md:text-7xl font-black text-slate-900 uppercase tracking-tighter italic leading-none drop-shadow-2xl">
                 VAULT <span className="text-primary italic">VACANT</span>
               </h2>
               <div className="flex items-center justify-center gap-4 text-slate-800">
@@ -136,16 +136,16 @@ export default function WishlistPage() {
             </div>
             <Link 
               href="/products"
-              className="flex items-center gap-6 px-12 py-8 bg-primary text-white font-black uppercase tracking-[0.4em] text-xs rounded-3xl hover:bg-primary/90 transition-all shadow-[0_30px_70px_rgba(239,68,68,0.5)] transform hover:-translate-y-3 italic relative z-10"
+              className="flex items-center gap-6 px-12 py-8 bg-primary text-slate-900 font-black uppercase tracking-[0.4em] text-xs rounded-3xl hover:bg-primary/90 transition-all shadow-[0_30px_70px_rgba(239,68,68,0.5)] transform hover:-translate-y-3 italic relative z-10"
             >
               <ShoppingCart className="w-6 h-6" />
               START_COMPONENT_SCAN
             </Link>
             
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 text-slate-900 opacity-20">
-               <div className="w-16 h-px bg-slate-900" />
+               <div className="w-16 h-px bg-slate-100" />
                <Zap className="w-4 h-4 animate-pulse" />
-               <div className="w-16 h-px bg-slate-900" />
+               <div className="w-16 h-px bg-slate-100" />
             </div>
           </div>
         )}

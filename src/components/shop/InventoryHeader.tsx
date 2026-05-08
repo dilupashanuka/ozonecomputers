@@ -37,7 +37,7 @@ export function InventoryHeader({ slides, settings }: InventoryHeaderProps) {
 
   if (!slides || slides.length === 0) {
     return (
-      <div className="pt-64 pb-32 relative overflow-hidden bg-[#050811]">
+      <div className="pt-64 pb-32 relative overflow-hidden bg-slate-50">
         <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-primary/5 blur-[200px] pointer-events-none" />
         <div className="container mx-auto px-6 relative z-10 text-center">
           <div className="max-w-6xl mx-auto space-y-12">
@@ -45,7 +45,7 @@ export function InventoryHeader({ slides, settings }: InventoryHeaderProps) {
               <Zap className="w-6 h-6 text-primary animate-pulse" />
               <span className="text-[11px] font-black uppercase tracking-[0.6em] text-primary italic leading-none">OZONE CORE SYSTEMS</span>
             </div>
-            <h1 className="text-[5rem] md:text-[10rem] font-black text-white tracking-tighter leading-[0.8] uppercase italic drop-shadow-[0_30px_60px_rgba(0,0,0,0.8)]">
+            <h1 className="text-[5rem] md:text-[10rem] font-black text-slate-900 tracking-tighter leading-[0.8] uppercase italic drop-shadow-[0_30px_60px_rgba(0,0,0,0.8)]">
               {displayTitle}
             </h1>
             <p className="text-xl md:text-3xl text-slate-500 font-black max-w-4xl mx-auto leading-relaxed italic uppercase tracking-tight">
@@ -60,7 +60,7 @@ export function InventoryHeader({ slides, settings }: InventoryHeaderProps) {
   const activeSlide = slides[currentSlide];
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#050811]">
+    <div className="relative w-full overflow-hidden bg-slate-50">
       <div className="pt-64 pb-24 relative z-20 text-center">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto space-y-14">
@@ -75,7 +75,7 @@ export function InventoryHeader({ slides, settings }: InventoryHeaderProps) {
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="space-y-10"
             >
-              <h1 className="text-[5rem] md:text-[11rem] font-black text-white tracking-tighter leading-[0.8] uppercase italic drop-shadow-[0_40px_100px_rgba(0,0,0,0.9)]">
+              <h1 className="text-[5rem] md:text-[11rem] font-black text-slate-900 tracking-tighter leading-[0.8] uppercase italic drop-shadow-[0_40px_100px_rgba(0,0,0,0.9)]">
                 {displayTitle}
               </h1>
               <p className="text-xl md:text-3xl text-slate-500 font-black max-w-5xl mx-auto leading-relaxed italic uppercase tracking-tight">
@@ -87,7 +87,7 @@ export function InventoryHeader({ slides, settings }: InventoryHeaderProps) {
       </div>
 
       <div className="relative w-full h-[65vh] md:h-[80vh] -mt-20 mb-32 px-6 md:px-16 lg:px-32">
-        <div className="w-full h-full relative rounded-[5rem] lg:rounded-[7rem] overflow-hidden border border-white/10 shadow-[0_100px_200px_rgba(0,0,0,1)] bg-black group">
+        <div className="w-full h-full relative rounded-[5rem] lg:rounded-[7rem] overflow-hidden border border-black/10 shadow-[0_100px_200px_rgba(0,0,0,1)] bg-black group">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeSlide.id}
@@ -118,7 +118,7 @@ export function InventoryHeader({ slides, settings }: InventoryHeaderProps) {
                className="space-y-8"
              >
                 <div className="h-1.5 w-32 bg-primary rounded-full shadow-[0_0_20px_rgba(239,68,68,0.8)]" />
-                <h3 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter italic leading-[0.85] drop-shadow-2xl">{activeSlide.title}</h3>
+                <h3 className="text-5xl md:text-8xl font-black text-slate-900 uppercase tracking-tighter italic leading-[0.85] drop-shadow-2xl">{activeSlide.title}</h3>
                 <p className="text-primary font-black uppercase tracking-[0.6em] text-[12px] italic">{activeSlide.subtitle}</p>
              </motion.div>
           </div>
@@ -134,7 +134,7 @@ export function InventoryHeader({ slides, settings }: InventoryHeaderProps) {
                 >
                   <div className={cn(
                     "h-1.5 transition-all duration-1000 rounded-full",
-                    i === currentSlide ? "w-24 bg-primary shadow-[0_0_30px_rgba(239,68,68,0.8)]" : "w-8 bg-white/5 hover:bg-white/20"
+                    i === currentSlide ? "w-24 bg-primary shadow-[0_0_30px_rgba(239,68,68,0.8)]" : "w-8 bg-black/5 hover:bg-black/20"
                   )} />
                 </button>
               ))}
@@ -142,9 +142,9 @@ export function InventoryHeader({ slides, settings }: InventoryHeaderProps) {
           )}
 
           {/* Verification Badge */}
-          <div className="absolute top-16 left-16 md:left-32 z-30 hidden md:flex items-center gap-4 px-8 py-4 bg-black/60 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+          <div className="absolute top-16 left-16 md:left-32 z-30 hidden md:flex items-center gap-4 px-8 py-4 bg-black/60 backdrop-blur-3xl border border-black/10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
              <ShieldAlert className="w-5 h-5 text-primary" />
-             <span className="text-[10px] font-black text-white uppercase tracking-[0.4em] italic leading-none">LAB VERIFIED SECURE NODE</span>
+             <span className="text-[10px] font-black text-slate-900 uppercase tracking-[0.4em] italic leading-none">LAB VERIFIED SECURE NODE</span>
           </div>
 
           <div className="absolute top-16 right-16 md:right-32 z-30 hidden md:flex items-center gap-4 text-slate-800">

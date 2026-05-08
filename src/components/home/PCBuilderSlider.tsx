@@ -38,8 +38,8 @@ export function PCBuilderSlider({ slides, settings }: PCBuilderProps) {
   const subtitle = settings?.pc_builder_subtitle || "Your dream setup is just a few blueprints away. Choose from our elite, lab-verified component modules.";
 
   return (
-    <section className="py-32 w-full relative z-20 bg-[#050811]">
-      <div className="relative h-[700px] md:h-[900px] w-full overflow-hidden rounded-[4rem] mx-auto max-w-[1800px] shadow-[0_50px_100px_rgba(0,0,0,0.8)] border border-white/5">
+    <section className="py-32 w-full relative z-20 bg-slate-50">
+      <div className="relative h-[700px] md:h-[900px] w-full overflow-hidden rounded-[4rem] mx-auto max-w-[1800px] shadow-[0_50px_100px_rgba(0,0,0,0.8)] border border-black/5">
         {slides.map((slide, index) => (
           <div 
             key={slide.id}
@@ -67,7 +67,7 @@ export function PCBuilderSlider({ slides, settings }: PCBuilderProps) {
               <Zap className="w-5 h-5 text-primary animate-pulse" />
               <span className="text-[10px] font-black uppercase tracking-[0.5em] text-primary italic">EXTREME BLUEPRINT CONFIG</span>
             </div>
-            <h2 className="text-6xl md:text-9xl font-black text-white tracking-tighter leading-[0.85] animate-in fade-in slide-in-from-bottom-12 duration-1000 uppercase italic">
+            <h2 className="text-6xl md:text-9xl font-black text-slate-900 tracking-tighter leading-[0.85] animate-in fade-in slide-in-from-bottom-12 duration-1000 uppercase italic">
               {title.split(' ').map((word, i) => (
                 <span key={i} className={cn(
                   (word.toLowerCase() === 'masterpiece' || word.toLowerCase() === 'architect' || word.toLowerCase() === 'blueprints') ? 'text-primary' : '',
@@ -84,7 +84,7 @@ export function PCBuilderSlider({ slides, settings }: PCBuilderProps) {
             <div className="flex items-center gap-10 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
               <Link 
                 href="/pc-builder" 
-                className="inline-flex h-24 items-center px-16 bg-primary text-white font-black uppercase tracking-[0.3em] rounded-2xl text-xs md:text-sm shadow-[0_20px_60px_rgba(239,68,68,0.4)] hover:shadow-primary/60 transition-all active:scale-95 transform hover:-translate-y-2 italic group"
+                className="inline-flex h-24 items-center px-16 bg-primary text-slate-900 font-black uppercase tracking-[0.3em] rounded-2xl text-xs md:text-sm shadow-[0_20px_60px_rgba(239,68,68,0.4)] hover:shadow-primary/60 transition-all active:scale-95 transform hover:-translate-y-2 italic group"
               >
                 INITIALIZE BUILD
                 <ArrowRight className="ml-4 w-7 h-7 group-hover:translate-x-3 transition-transform" />
@@ -106,7 +106,7 @@ export function PCBuilderSlider({ slides, settings }: PCBuilderProps) {
                 onClick={() => setCurrent(i)}
                 className={cn(
                   "w-1 transition-all duration-700 rounded-full shadow-2xl",
-                  i === current ? 'h-20 bg-primary shadow-primary/50' : 'h-8 bg-white/10 hover:bg-white/30'
+                  i === current ? 'h-20 bg-primary shadow-primary/50' : 'h-8 bg-black/10 hover:bg-white/30'
                 )}
               />
             ))}

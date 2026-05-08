@@ -26,19 +26,19 @@ export default async function PCBuilderAdminPage() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-extrabold tracking-tight text-white flex items-center gap-4">
+        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 flex items-center gap-4">
           <Cpu className="w-10 h-10 text-blue-500" />
           PC Builder Manager
         </h1>
-        <p className="text-slate-400 font-medium">Manage the static text and background gallery for the PC Builder section.</p>
+        <p className="text-slate-600 font-medium">Manage the static text and background gallery for the PC Builder section.</p>
       </div>
 
       <div className="grid lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1 space-y-8">
           {/* Global Text Content Form */}
-          <Card className="bg-slate-900/40 border-white/5 backdrop-blur-md">
+          <Card className="bg-white/40 border-black/5 backdrop-blur-md">
             <CardHeader>
-              <CardTitle className="text-white flex items-center gap-2">
+              <CardTitle className="text-slate-900 flex items-center gap-2">
                 <FileText className="w-5 h-5 text-blue-400" /> Section Text
               </CardTitle>
               <CardDescription className="text-slate-500">This text stays consistent while images rotate.</CardDescription>
@@ -46,24 +46,24 @@ export default async function PCBuilderAdminPage() {
             <CardContent>
               <form action={updatePCBuilderGlobalText} className="space-y-6">
                 <div className="space-y-2">
-                  <Label className="text-slate-300 font-bold text-[11px] uppercase tracking-wider">Main Heading</Label>
+                  <Label className="text-slate-700 font-bold text-[11px] uppercase tracking-wider">Main Heading</Label>
                   <Input 
                     name="title" 
                     defaultValue={settings?.pc_builder_title || "Build Your Masterpiece"}
-                    className="bg-white/5 border-white/10 text-white h-11"
+                    className="bg-black/5 border-black/10 text-slate-900 h-11"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label className="text-slate-300 font-bold text-[11px] uppercase tracking-wider">Description</Label>
+                  <Label className="text-slate-700 font-bold text-[11px] uppercase tracking-wider">Description</Label>
                   <Textarea 
                     name="description" 
                     defaultValue={settings?.pc_builder_subtitle || "Your dream setup is just a few clicks away. Choose from our premium selection of genuine components."}
-                    className="bg-white/5 border-white/10 text-white min-h-[120px]"
+                    className="bg-black/5 border-black/10 text-slate-900 min-h-[120px]"
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold h-11 rounded-xl shadow-lg shadow-blue-600/20">
+                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 text-slate-900 font-bold h-11 rounded-xl shadow-lg shadow-blue-600/20">
                   <Save className="w-4 h-4 mr-2" /> Save Section Text
                 </Button>
               </form>
@@ -71,9 +71,9 @@ export default async function PCBuilderAdminPage() {
           </Card>
 
           {/* Add Backgrounds Form */}
-          <Card className="bg-slate-900/40 border-white/5 backdrop-blur-md">
+          <Card className="bg-white/40 border-black/5 backdrop-blur-md">
             <CardHeader>
-              <CardTitle className="text-white flex items-center gap-2">
+              <CardTitle className="text-slate-900 flex items-center gap-2">
                 <Plus className="w-5 h-5 text-purple-400" /> Add Backgrounds
               </CardTitle>
               <CardDescription className="text-slate-500">Upload images for the background carousel.</CardDescription>
@@ -81,11 +81,11 @@ export default async function PCBuilderAdminPage() {
             <CardContent>
               <form action={addPCSlide} className="space-y-6">
                 <div className="space-y-2">
-                  <Label className="text-slate-300 font-bold text-[11px] uppercase tracking-wider text-blue-400">Select Images</Label>
+                  <Label className="text-slate-700 font-bold text-[11px] uppercase tracking-wider text-blue-400">Select Images</Label>
                   <AdminMediaUpload name="images" multiple required />
                 </div>
 
-                <Button type="submit" className="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold h-11 rounded-xl">
+                <Button type="submit" className="w-full bg-slate-200 hover:bg-slate-700 text-slate-900 font-bold h-11 rounded-xl">
                   Upload Backgrounds
                 </Button>
               </form>
@@ -95,13 +95,13 @@ export default async function PCBuilderAdminPage() {
 
         {/* Background Gallery */}
         <div className="lg:col-span-2 space-y-6">
-          <h2 className="text-xl font-bold text-white flex items-center gap-2 px-2">
+          <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2 px-2">
             <ImageIcon className="w-5 h-5 text-blue-400" /> Background Gallery
           </h2>
           
           <div className="grid sm:grid-cols-2 gap-6">
             {slides?.map((slide) => (
-              <Card key={slide.id} className="group relative aspect-video glass rounded-[2.5rem] border-white/5 overflow-hidden transition-all hover:border-primary/50">
+              <Card key={slide.id} className="group relative aspect-video glass rounded-[2.5rem] border-black/5 overflow-hidden transition-all hover:border-primary/50">
                 <Image src={slide.image_url} alt="PC Builder Background" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
                 
@@ -114,8 +114,8 @@ export default async function PCBuilderAdminPage() {
                       size="icon" 
                       type="submit" 
                       className={cn(
-                        "w-10 h-10 rounded-xl border border-white/10 backdrop-blur-md transition-all",
-                        slide.is_active ? "text-green-400 bg-green-400/10" : "text-slate-500 bg-white/5"
+                        "w-10 h-10 rounded-xl border border-black/10 backdrop-blur-md transition-all",
+                        slide.is_active ? "text-green-400 bg-green-400/10" : "text-slate-500 bg-black/5"
                       )}
                     >
                       {slide.is_active ? <Eye className="w-5 h-5" /> : <EyeOff className="w-5 h-5" />}
@@ -129,7 +129,7 @@ export default async function PCBuilderAdminPage() {
                       variant="ghost" 
                       size="icon" 
                       type="submit" 
-                      className="w-10 h-10 rounded-xl text-white bg-red-600/80 hover:bg-red-600 shadow-xl opacity-0 group-hover:opacity-100 transition-all scale-90 group-hover:scale-100"
+                      className="w-10 h-10 rounded-xl text-slate-900 bg-red-600/80 hover:bg-red-600 shadow-xl opacity-0 group-hover:opacity-100 transition-all scale-90 group-hover:scale-100"
                     >
                       <Trash2 className="w-5 h-5" />
                     </Button>
@@ -139,7 +139,7 @@ export default async function PCBuilderAdminPage() {
             ))}
 
             {!slides?.length && (
-              <div className="col-span-full py-20 glass rounded-[2.5rem] border border-dashed border-white/10 flex flex-col items-center justify-center text-slate-600 gap-4">
+              <div className="col-span-full py-20 glass rounded-[2.5rem] border border-dashed border-black/10 flex flex-col items-center justify-center text-slate-600 gap-4">
                  <Cpu className="w-12 h-12 opacity-20" />
                  <p className="font-black uppercase tracking-widest text-xs opacity-40 text-center">
                    No background images added.<br/>Upload images to enable the section.

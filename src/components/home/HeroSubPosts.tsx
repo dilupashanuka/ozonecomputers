@@ -35,7 +35,7 @@ export function HeroSubPosts({ posts }: HeroSubPostsProps) {
   if (!isMounted || !posts?.length) return null;
 
   return (
-    <section className="relative w-full h-[75vh] md:h-[90vh] overflow-hidden bg-[#050811]">
+    <section className="relative w-full h-[75vh] md:h-[90vh] overflow-hidden bg-slate-50">
       {posts.map((post, index) => (
         <Link 
           key={post.id}
@@ -60,11 +60,11 @@ export function HeroSubPosts({ posts }: HeroSubPostsProps) {
                    <Activity className="w-6 h-6 text-primary animate-pulse" />
                    <span className="text-[11px] font-black uppercase tracking-[0.6em] text-primary italic leading-none">OZONE LAB INTEL FEED</span>
                 </div>
-                <div className="w-16 h-16 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center text-slate-800 shadow-2xl">
+                <div className="w-16 h-16 rounded-2xl bg-black/[0.02] border border-black/5 flex items-center justify-center text-slate-800 shadow-2xl">
                    <Terminal className="w-8 h-8" />
                 </div>
              </div>
-             <h3 className="text-[5rem] md:text-[10rem] font-black text-white uppercase tracking-tighter italic leading-[0.8] drop-shadow-[0_40px_100px_rgba(0,0,0,0.9)]">
+             <h3 className="text-[5rem] md:text-[10rem] font-black text-slate-900 uppercase tracking-tighter italic leading-[0.8] drop-shadow-[0_40px_100px_rgba(0,0,0,0.9)]">
                 {post.title}
              </h3>
              <div className="flex items-center gap-8 text-[12px] font-black uppercase tracking-[0.5em] text-slate-600 italic">
@@ -91,7 +91,7 @@ export function HeroSubPosts({ posts }: HeroSubPostsProps) {
               >
                 <div className={cn(
                   "h-1.5 transition-all duration-1000 rounded-full",
-                  i === currentSlide ? "w-32 bg-primary shadow-[0_0_30px_rgba(239,68,68,0.8)]" : "w-10 bg-white/5 hover:bg-white/20"
+                  i === currentSlide ? "w-32 bg-primary shadow-[0_0_30px_rgba(239,68,68,0.8)]" : "w-10 bg-black/5 hover:bg-black/20"
                 )} />
               </button>
             ))}
@@ -100,10 +100,10 @@ export function HeroSubPosts({ posts }: HeroSubPostsProps) {
       )}
 
       {/* Decorative Overlays */}
-      <div className="absolute top-16 left-16 w-48 h-px bg-white/5 z-20" />
-      <div className="absolute top-16 left-16 h-48 w-px bg-white/5 z-20" />
-      <div className="absolute bottom-16 right-16 w-48 h-px bg-white/5 z-20" />
-      <div className="absolute bottom-16 right-16 h-48 w-px bg-white/5 z-20" />
+      <div className="absolute top-16 left-16 w-48 h-px bg-black/5 z-20" />
+      <div className="absolute top-16 left-16 h-48 w-px bg-black/5 z-20" />
+      <div className="absolute bottom-16 right-16 w-48 h-px bg-black/5 z-20" />
+      <div className="absolute bottom-16 right-16 h-48 w-px bg-black/5 z-20" />
       
       {/* Corner UI */}
       <div className="absolute top-16 right-16 z-20 flex flex-col items-end gap-2 text-slate-900 font-black text-[9px] uppercase tracking-widest italic">

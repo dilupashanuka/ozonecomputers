@@ -37,7 +37,7 @@ const BRANCH_LOCATIONS = [
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-[#050811] pb-64 relative overflow-hidden">
+    <div className="min-h-screen bg-slate-50 pb-64 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[1200px] h-[1200px] bg-primary/5 blur-[220px] rounded-full -mr-96 -mt-96 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-primary/5 blur-[180px] rounded-full -ml-48 -mb-48 pointer-events-none" />
@@ -51,11 +51,11 @@ export default function ContactPage() {
                    <Activity className="w-6 h-6 text-primary animate-pulse" />
                    <span className="text-[11px] font-black uppercase tracking-[0.6em] text-primary italic leading-none">UPLINK ESTABLISHED PROTOCOL</span>
                 </div>
-                <div className="w-16 h-16 rounded-[1.5rem] bg-white/[0.02] border border-white/5 flex items-center justify-center text-slate-800 shadow-2xl">
+                <div className="w-16 h-16 rounded-[1.5rem] bg-black/[0.02] border border-black/5 flex items-center justify-center text-slate-800 shadow-2xl">
                    <Terminal className="w-8 h-8" />
                 </div>
              </div>
-            <h1 className="text-[5rem] md:text-[11rem] font-black text-white tracking-tighter leading-[0.8] uppercase italic drop-shadow-[0_40px_100px_rgba(0,0,0,0.9)] animate-in fade-in slide-in-from-bottom-12 duration-1000">
+            <h1 className="text-[5rem] md:text-[11rem] font-black text-slate-900 tracking-tighter leading-[0.8] uppercase italic drop-shadow-[0_40px_100px_rgba(0,0,0,0.9)] animate-in fade-in slide-in-from-bottom-12 duration-1000">
               ELITE <br /> <span className="text-primary italic">SUPPORT</span>
             </h1>
             <div className="flex items-center gap-8 text-slate-600 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
@@ -72,18 +72,18 @@ export default function ContactPage() {
         {/* Branch Details Grid */}
         <div className="grid lg:grid-cols-3 gap-14">
           {BRANCH_LOCATIONS.map((branch, idx) => (
-            <div key={branch.name} className="p-16 bg-white/[0.01] rounded-[5rem] border border-white/5 space-y-12 group hover:border-primary/60 transition-all duration-1000 shadow-[0_50px_150px_rgba(0,0,0,0.8)] relative overflow-hidden hover:-translate-y-6">
+            <div key={branch.name} className="p-16 bg-black/[0.01] rounded-[5rem] border border-black/5 space-y-12 group hover:border-primary/60 transition-all duration-1000 shadow-[0_50px_150px_rgba(0,0,0,0.8)] relative overflow-hidden hover:-translate-y-6">
                <div className="absolute top-0 right-0 p-12">
                   <span className="text-[11px] font-black text-slate-800 uppercase tracking-[0.5em] italic leading-none">{branch.code}</span>
                </div>
                <div className="flex items-center justify-between relative z-10">
-                 <div className="w-20 h-20 rounded-[2rem] bg-white/[0.02] border border-white/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-1000 shadow-2xl group-hover:shadow-[0_20px_50px_rgba(239,68,68,0.5)]">
+                 <div className="w-20 h-20 rounded-[2rem] bg-black/[0.02] border border-black/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-slate-900 transition-all duration-1000 shadow-2xl group-hover:shadow-[0_20px_50px_rgba(239,68,68,0.5)]">
                    <MapPin className="w-10 h-10" />
                  </div>
                  <Globe className="w-10 h-10 text-slate-900 animate-spin-slow group-hover:text-primary transition-colors duration-1000" />
                </div>
                <div className="space-y-8 relative z-10">
-                 <h3 className="text-4xl font-black text-white uppercase italic tracking-tighter leading-none group-hover:text-primary transition-colors duration-700">{branch.name}</h3>
+                 <h3 className="text-4xl font-black text-slate-900 uppercase italic tracking-tighter leading-none group-hover:text-primary transition-colors duration-700">{branch.name}</h3>
                  <div className="space-y-6">
                     <div className="flex items-center gap-6 text-slate-700">
                       <Phone className="w-6 h-6 text-primary" />
@@ -96,7 +96,7 @@ export default function ContactPage() {
                  </div>
                </div>
                
-               <div className="aspect-square rounded-[4rem] overflow-hidden border-2 border-white/5 relative shadow-inner group-hover:border-primary/30 transition-all duration-1000">
+               <div className="aspect-square rounded-[4rem] overflow-hidden border-2 border-black/5 relative shadow-inner group-hover:border-primary/30 transition-all duration-1000">
                   <iframe 
                     src={branch.map} 
                     width="100%" 
@@ -118,7 +118,7 @@ export default function ContactPage() {
           {/* Form Side */}
           <div className="space-y-20">
             <div className="space-y-10">
-              <h2 className="text-6xl md:text-9xl font-black text-white tracking-tighter uppercase italic leading-none drop-shadow-2xl">TRANSMIT <span className="text-primary italic">INTEL</span></h2>
+              <h2 className="text-6xl md:text-9xl font-black text-slate-900 tracking-tighter uppercase italic leading-none drop-shadow-2xl">TRANSMIT <span className="text-primary italic">INTEL</span></h2>
               <div className="flex items-center gap-6 text-slate-800">
                  <Terminal className="w-8 h-8" />
                  <p className="text-slate-600 font-black uppercase tracking-tight italic text-xl md:text-2xl leading-relaxed max-w-2xl">
@@ -149,7 +149,7 @@ export default function ContactPage() {
           {/* Form Component */}
           <div className="relative group">
              <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-primary/10 blur-[200px] rounded-full pointer-events-none animate-pulse" />
-             <div className="bg-white/[0.01] border border-white/5 p-16 md:p-20 rounded-[6rem] shadow-[0_60px_200px_rgba(0,0,0,1)] backdrop-blur-3xl relative z-10 hover:border-primary/40 transition-all duration-1000">
+             <div className="bg-black/[0.01] border border-black/5 p-16 md:p-20 rounded-[6rem] shadow-[0_60px_200px_rgba(0,0,0,1)] backdrop-blur-3xl relative z-10 hover:border-primary/40 transition-all duration-1000">
                 <div className="flex items-center justify-between mb-16">
                    <div className="flex items-center gap-6">
                       <Zap className="w-6 h-6 text-primary animate-pulse" />
@@ -160,9 +160,9 @@ export default function ContactPage() {
                 <ContactForm />
                 
                 <div className="mt-16 flex items-center gap-6 opacity-10 group-hover:opacity-100 transition-opacity duration-1000">
-                   <div className="w-32 h-px bg-slate-900" />
+                   <div className="w-32 h-px bg-slate-100" />
                    <Terminal className="w-5 h-5 text-slate-900" />
-                   <div className="w-32 h-px bg-slate-900" />
+                   <div className="w-32 h-px bg-slate-100" />
                 </div>
              </div>
           </div>
@@ -174,13 +174,13 @@ export default function ContactPage() {
 
 function ContactInfoCard({ icon, label, value }: { icon: React.ReactNode, label: string, value: string }) {
   return (
-    <div className="flex items-center gap-10 p-12 rounded-[3.5rem] bg-white/[0.01] border border-white/5 group hover:border-primary/40 transition-all duration-1000 shadow-[0_40px_100px_rgba(0,0,0,0.8)] hover:-translate-y-3">
-       <div className="w-20 h-20 rounded-[1.75rem] bg-white/[0.02] border border-white/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-1000 shadow-2xl group-hover:shadow-[0_20px_50px_rgba(239,68,68,0.4)]">
+    <div className="flex items-center gap-10 p-12 rounded-[3.5rem] bg-black/[0.01] border border-black/5 group hover:border-primary/40 transition-all duration-1000 shadow-[0_40px_100px_rgba(0,0,0,0.8)] hover:-translate-y-3">
+       <div className="w-20 h-20 rounded-[1.75rem] bg-black/[0.02] border border-black/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-slate-900 transition-all duration-1000 shadow-2xl group-hover:shadow-[0_20px_50px_rgba(239,68,68,0.4)]">
           {icon}
        </div>
        <div className="space-y-3">
          <p className="text-[11px] font-black text-slate-800 uppercase tracking-[0.5em] italic leading-none group-hover:text-slate-500 transition-colors duration-700">{label}</p>
-         <p className="text-xl md:text-2xl font-black text-white uppercase tracking-widest italic leading-none drop-shadow-2xl">{value}</p>
+         <p className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-widest italic leading-none drop-shadow-2xl">{value}</p>
        </div>
     </div>
   );

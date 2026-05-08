@@ -47,60 +47,60 @@ export async function InventorySection({ type, title, description, searchParams 
       <div className="flex justify-between items-center">
         <div>
           <div className="flex items-center gap-3 mb-2">
-            <div className={cn("p-2 rounded-xl bg-white/5 border border-white/10", accentColor)}>
+            <div className={cn("p-2 rounded-xl bg-black/5 border border-black/10", accentColor)}>
               <Icon className="w-6 h-6" />
             </div>
-            <h1 className="text-4xl font-extrabold tracking-tight text-white">{title}</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">{title}</h1>
           </div>
-          <p className="text-slate-400">{description} ({totalCount || 0} items)</p>
+          <p className="text-slate-600">{description} ({totalCount || 0} items)</p>
         </div>
         <div className="flex gap-4 items-center">
           <AdminSearch />
           <Link 
             href={`/tarusha/dashboard/products/new?inventory=${type}`}
-            className={cn(buttonVariants(), "bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl h-12 px-6 shadow-lg shadow-blue-600/20")}
+            className={cn(buttonVariants(), "bg-blue-600 hover:bg-blue-500 text-slate-900 font-bold rounded-xl h-12 px-6 shadow-lg shadow-blue-600/20")}
           >
             <Plus className="w-4 h-4 mr-2" /> Add {title.slice(0, -1)}
           </Link>
         </div>
       </div>
 
-      <Card className="bg-slate-900/40 border-white/5 backdrop-blur-md overflow-hidden">
-        <CardHeader className="border-b border-white/5 bg-white/5 flex flex-row items-center justify-between py-4">
-          <CardTitle className="text-white text-lg flex items-center gap-2">
+      <Card className="bg-white/40 border-black/5 backdrop-blur-md overflow-hidden">
+        <CardHeader className="border-b border-black/5 bg-black/5 flex flex-row items-center justify-between py-4">
+          <CardTitle className="text-slate-900 text-lg flex items-center gap-2">
             Active Stock List
           </CardTitle>
-          <div className="text-xs text-slate-400">
+          <div className="text-xs text-slate-600">
             Showing {products?.length ? offset + 1 : 0} - {Math.min(offset + PAGE_SIZE, totalCount || 0)} of {totalCount}
           </div>
         </CardHeader>
         <CardContent className="p-0">
           <Table>
             <TableHeader>
-              <TableRow className="border-white/5 hover:bg-transparent">
-                <TableHead className="text-slate-400 font-bold uppercase tracking-wider text-[11px] py-6 px-6">Product Details</TableHead>
-                <TableHead className="text-slate-400 font-bold uppercase tracking-wider text-[11px]">Category</TableHead>
-                <TableHead className="text-slate-400 font-bold uppercase tracking-wider text-[11px]">Pricing</TableHead>
-                <TableHead className="text-slate-400 font-bold uppercase tracking-wider text-[11px]">Status</TableHead>
-                <TableHead className="text-right text-slate-400 font-bold uppercase tracking-wider text-[11px] px-6">Control</TableHead>
+              <TableRow className="border-black/5 hover:bg-transparent">
+                <TableHead className="text-slate-600 font-bold uppercase tracking-wider text-[11px] py-6 px-6">Product Details</TableHead>
+                <TableHead className="text-slate-600 font-bold uppercase tracking-wider text-[11px]">Category</TableHead>
+                <TableHead className="text-slate-600 font-bold uppercase tracking-wider text-[11px]">Pricing</TableHead>
+                <TableHead className="text-slate-600 font-bold uppercase tracking-wider text-[11px]">Status</TableHead>
+                <TableHead className="text-right text-slate-600 font-bold uppercase tracking-wider text-[11px] px-6">Control</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {products?.map((product) => (
-                <TableRow key={product.id} className="border-white/5 hover:bg-white/5 transition-colors group">
+                <TableRow key={product.id} className="border-black/5 hover:bg-black/5 transition-colors group">
                   <TableCell className="py-5 px-6">
-                    <div className="font-bold text-white group-hover:text-blue-400 transition-colors">{product.title}</div>
+                    <div className="font-bold text-slate-900 group-hover:text-blue-400 transition-colors">{product.title}</div>
                     {product.brand && (
                       <div className="text-[10px] text-blue-400 font-bold uppercase tracking-widest mt-1">{product.brand} {product.model}</div>
                     )}
                   </TableCell>
                   <TableCell>
-                    <span className="px-3 py-1 rounded-lg bg-slate-800 border border-white/10 text-slate-300 text-[11px] font-bold uppercase tracking-wider">
+                    <span className="px-3 py-1 rounded-lg bg-slate-200 border border-black/10 text-slate-700 text-[11px] font-bold uppercase tracking-wider">
                       {product.categories?.name || product.category}
                     </span>
                   </TableCell>
                   <TableCell>
-                    <div className="font-bold text-white">
+                    <div className="font-bold text-slate-900">
                       {product.price ? `Rs. ${Number(product.price).toLocaleString()}` : '-'}
                     </div>
                   </TableCell>
@@ -118,7 +118,7 @@ export async function InventorySection({ type, title, description, searchParams 
                     <div className="flex justify-end gap-2">
                       <Link 
                         href={`/tarusha/dashboard/products/${product.id}`}
-                        className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "w-9 h-9 rounded-lg bg-white/5 border border-white/5 text-slate-400 hover:text-white hover:bg-blue-600/20 hover:border-blue-500/30")}
+                        className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "w-9 h-9 rounded-lg bg-black/5 border border-black/5 text-slate-600 hover:text-slate-900 hover:bg-blue-600/20 hover:border-blue-500/30")}
                       >
                         <Edit className="w-4 h-4" />
                       </Link>
@@ -128,7 +128,7 @@ export async function InventorySection({ type, title, description, searchParams 
                           variant="ghost" 
                           size="icon" 
                           type="submit" 
-                          className="w-9 h-9 rounded-lg bg-white/5 border border-white/5 text-slate-400 hover:text-red-400 hover:bg-red-400/20 hover:border-red-500/30"
+                          className="w-9 h-9 rounded-lg bg-black/5 border border-black/5 text-slate-600 hover:text-red-400 hover:bg-red-400/20 hover:border-red-500/30"
                         >
                           <Trash2 className="w-4 h-4" />
                         </Button>
@@ -153,7 +153,7 @@ export async function InventorySection({ type, title, description, searchParams 
         
         {/* Pagination Controls */}
         {totalPages > 1 && (
-          <div className="border-t border-white/5 p-4 flex items-center justify-between bg-white/[0.02]">
+          <div className="border-t border-black/5 p-4 flex items-center justify-between bg-black/[0.02]">
             <p className="text-xs text-slate-500 font-bold tracking-widest uppercase">
               Page {page} of {totalPages}
             </p>
@@ -162,7 +162,7 @@ export async function InventorySection({ type, title, description, searchParams 
                 href={`?${new URLSearchParams({ ...(searchParams as Record<string, string>), page: String(Math.max(1, page - 1)) }).toString()}`}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "sm" }),
-                  "bg-white/5 border-white/10 text-white hover:bg-white/10",
+                  "bg-black/5 border-black/10 text-slate-900 hover:bg-black/10",
                   page === 1 && "opacity-50 pointer-events-none"
                 )}
               >
@@ -172,7 +172,7 @@ export async function InventorySection({ type, title, description, searchParams 
                 href={`?${new URLSearchParams({ ...(searchParams as Record<string, string>), page: String(Math.min(totalPages, page + 1)) }).toString()}`}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "sm" }),
-                  "bg-white/5 border-white/10 text-white hover:bg-white/10",
+                  "bg-black/5 border-black/10 text-slate-900 hover:bg-black/10",
                   page === totalPages && "opacity-50 pointer-events-none"
                 )}
               >

@@ -9,7 +9,7 @@ import { Metadata } from 'next';
 const CAT_STYLES: Record<string, { border: string; text: string; bg: string; label: string }> = {
   gaming:      { border: 'border-primary/30',    text: 'text-primary',    bg: 'bg-primary/10',    label: 'ELITE GAMING' },
   office:      { border: 'border-cyan-500/30',   text: 'text-cyan-400',   bg: 'bg-cyan-500/10',   label: 'PRO WORK' },
-  budget:      { border: 'border-slate-500/30',  text: 'text-slate-400',  bg: 'bg-slate-500/10',  label: 'LAB ENTRY' },
+  budget:      { border: 'border-slate-500/30',  text: 'text-slate-600',  bg: 'bg-slate-500/10',  label: 'LAB ENTRY' },
   workstation: { border: 'border-purple-500/30', text: 'text-purple-400', bg: 'bg-purple-500/10', label: 'ENGINEERING' },
   streaming:   { border: 'border-yellow-500/30', text: 'text-yellow-400', bg: 'bg-yellow-500/10', label: 'CONTENT HUB' },
 };
@@ -73,7 +73,7 @@ export default async function PreBuildDetailPage({ params }: Props) {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* Back button */}
-        <Link href="/pc-builder" className="inline-flex items-center gap-3 text-slate-600 hover:text-white transition-all mb-12 text-[10px] font-black uppercase tracking-[0.4em] italic group">
+        <Link href="/pc-builder" className="inline-flex items-center gap-3 text-slate-600 hover:text-slate-900 transition-all mb-12 text-[10px] font-black uppercase tracking-[0.4em] italic group">
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-2" /> Back to Lab Blueprint
         </Link>
 
@@ -81,7 +81,7 @@ export default async function PreBuildDetailPage({ params }: Props) {
           {/* Left: Hero Image + Quick Info */}
           <div className="lg:col-span-2 space-y-8">
             {/* Hero Image */}
-            <div className="aspect-square relative bg-[#0a0d14] rounded-[4rem] overflow-hidden border border-white/5 shadow-2xl group">
+            <div className="aspect-square relative bg-[#0a0d14] rounded-[4rem] overflow-hidden border border-black/5 shadow-2xl group">
                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0d14] to-transparent z-10 opacity-60" />
               {build.image_url ? (
                 <Image src={build.image_url} alt={build.name} fill sizes="40vw" className="object-cover group-hover:scale-110 transition-transform duration-[2s] opacity-90" />
@@ -99,11 +99,11 @@ export default async function PreBuildDetailPage({ params }: Props) {
             </div>
 
             {/* Price Card */}
-            <div className="p-10 bg-white/[0.02] border border-white/10 rounded-[3rem] space-y-8 relative overflow-hidden">
+            <div className="p-10 bg-black/[0.02] border border-black/10 rounded-[3rem] space-y-8 relative overflow-hidden">
                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[40px] pointer-events-none" />
               <div>
                 <p className="text-[10px] text-primary font-black uppercase tracking-[0.5em] mb-3 italic">Investment Value</p>
-                <p className="text-6xl font-black text-white italic tracking-tighter">
+                <p className="text-6xl font-black text-slate-900 italic tracking-tighter">
                   {build.total_price ? `Rs. ${Number(build.total_price).toLocaleString()}` : 'ENQUIRE'}
                 </p>
                 <p className="text-[10px] text-slate-600 mt-4 uppercase tracking-[0.3em] font-black italic">{components.length} Laboratory-Matched Components</p>
@@ -111,7 +111,7 @@ export default async function PreBuildDetailPage({ params }: Props) {
               <Link
                 href={`https://wa.me/${mainWaNumber}?text=${whatsappMsg}`}
                 target="_blank"
-                className="flex items-center justify-center gap-4 w-full h-20 bg-primary text-white font-black uppercase tracking-[0.3em] text-xs rounded-2xl hover:bg-primary/90 transition-all shadow-[0_15px_50px_rgba(239,68,68,0.3)] transform hover:-translate-y-1 italic"
+                className="flex items-center justify-center gap-4 w-full h-20 bg-primary text-slate-900 font-black uppercase tracking-[0.3em] text-xs rounded-2xl hover:bg-primary/90 transition-all shadow-[0_15px_50px_rgba(239,68,68,0.3)] transform hover:-translate-y-1 italic"
               >
                 <MessageCircle className="w-6 h-6" /> Deploy Blueprint
               </Link>
@@ -136,7 +136,7 @@ export default async function PreBuildDetailPage({ params }: Props) {
                   </span>
                 )}
               </div>
-              <h1 className="text-6xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.8] mb-6 italic">
+              <h1 className="text-6xl md:text-7xl font-black text-slate-900 uppercase tracking-tighter leading-[0.8] mb-6 italic">
                 {build.name}
               </h1>
               {build.description && (
@@ -151,7 +151,7 @@ export default async function PreBuildDetailPage({ params }: Props) {
                    <h2 className="text-[10px] text-primary font-black uppercase tracking-[0.5em] italic flex-shrink-0">
                      System Architecture
                    </h2>
-                   <div className="h-px w-full bg-white/5" />
+                   <div className="h-px w-full bg-black/5" />
                  </div>
                 <div className="space-y-4">
                   {components.map((comp: any) => {
@@ -161,10 +161,10 @@ export default async function PreBuildDetailPage({ params }: Props) {
                     const total = price * comp.quantity;
 
                     return (
-                      <div key={comp.id} className="group bg-white/[0.02] border border-white/5 hover:border-primary/40 rounded-[2.5rem] p-6 transition-all duration-500">
+                      <div key={comp.id} className="group bg-black/[0.02] border border-black/5 hover:border-primary/40 rounded-[2.5rem] p-6 transition-all duration-500">
                         <div className="flex gap-6 items-center">
                           {/* Component Image */}
-                          <div className="w-20 h-20 flex-shrink-0 rounded-3xl bg-[#0a0d14] border border-white/5 overflow-hidden relative group-hover:scale-105 transition-transform duration-500">
+                          <div className="w-20 h-20 flex-shrink-0 rounded-3xl bg-[#0a0d14] border border-black/5 overflow-hidden relative group-hover:scale-105 transition-transform duration-500">
                             {product?.image_url ? (
                               <Image src={product.image_url} alt={name} fill sizes="80px" className="object-contain p-3 opacity-80 group-hover:opacity-100" />
                             ) : (
@@ -181,12 +181,12 @@ export default async function PreBuildDetailPage({ params }: Props) {
                                 <p className="text-[9px] text-primary font-black uppercase tracking-[0.4em] mb-1 italic">
                                   {comp.component_type}{comp.quantity > 1 ? ` × ${comp.quantity}` : ''}
                                 </p>
-                                <p className="text-lg font-black text-white leading-none uppercase italic tracking-tight group-hover:text-primary transition-colors">{name}</p>
+                                <p className="text-lg font-black text-slate-900 leading-none uppercase italic tracking-tight group-hover:text-primary transition-colors">{name}</p>
                                 {product?.brand && (
                                   <p className="text-[10px] text-slate-600 mt-2 font-black uppercase tracking-widest">{product.brand}</p>
                                 )}
                               </div>
-                              <p className="text-xl font-black text-white italic tracking-tighter">
+                              <p className="text-xl font-black text-slate-900 italic tracking-tighter">
                                 Rs. {Number(total).toLocaleString()}
                               </p>
                             </div>
@@ -195,7 +195,7 @@ export default async function PreBuildDetailPage({ params }: Props) {
                             {product?.specifications && Object.keys(product.specifications).length > 0 && (
                               <div className="flex flex-wrap gap-2 mt-4">
                                 {Object.entries(product.specifications).slice(0, 4).map(([k, v]) => (
-                                  <span key={k} className="px-3 py-1 text-[9px] font-black text-slate-500 bg-white/5 border border-white/5 rounded-full uppercase italic tracking-wider">
+                                  <span key={k} className="px-3 py-1 text-[9px] font-black text-slate-500 bg-black/5 border border-black/5 rounded-full uppercase italic tracking-wider">
                                     {k}: {String(v)}
                                   </span>
                                 ))}
@@ -209,7 +209,7 @@ export default async function PreBuildDetailPage({ params }: Props) {
                 </div>
               </div>
             ) : (
-              <div className="py-24 flex flex-col items-center gap-6 text-center border border-white/5 rounded-[4rem] bg-white/[0.01]">
+              <div className="py-24 flex flex-col items-center gap-6 text-center border border-black/5 rounded-[4rem] bg-black/[0.01]">
                 <Package className="w-16 h-16 text-slate-800" />
                 <p className="text-[10px] text-slate-700 font-black uppercase tracking-[0.4em] italic">Awaiting Component Serialization</p>
               </div>
@@ -222,9 +222,9 @@ export default async function PreBuildDetailPage({ params }: Props) {
                 { icon: <ShieldAlert className="w-6 h-6 text-primary" />, label: 'OZONE WARRANTY', desc: 'Direct Tech Coverage' },
                 { icon: <Activity className="w-6 h-6 text-primary" />, label: 'ELITE TUNING', desc: 'Maximized Frame Output' },
               ].map(item => (
-                <div key={item.label} className="p-8 bg-white/[0.02] border border-white/5 rounded-[2rem] group hover:border-primary/40 transition-all duration-500">
+                <div key={item.label} className="p-8 bg-black/[0.02] border border-black/5 rounded-[2rem] group hover:border-primary/40 transition-all duration-500">
                   <div className="mb-4 transform group-hover:scale-110 transition-transform duration-500">{item.icon}</div>
-                  <p className="text-xs font-black text-white uppercase tracking-[0.2em] italic mb-1">{item.label}</p>
+                  <p className="text-xs font-black text-slate-900 uppercase tracking-[0.2em] italic mb-1">{item.label}</p>
                   <p className="text-[9px] text-slate-600 font-black uppercase tracking-[0.1em]">{item.desc}</p>
                 </div>
               ))}

@@ -59,7 +59,7 @@ export function Footer({ settings }: FooterProps) {
   ].filter(s => s.url || s.id === 'facebook');
 
   return (
-    <footer className="bg-[#050811] border-t border-white/5 relative overflow-hidden">
+    <footer className="bg-slate-50 border-t border-black/5 relative overflow-hidden">
       {/* Decorative background element */}
       <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-primary/5 blur-[180px] rounded-full -mb-96 -mr-96 pointer-events-none" />
       <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-cyan-500/5 blur-[120px] rounded-full -mt-48 -ml-48 pointer-events-none" />
@@ -72,11 +72,11 @@ export function Footer({ settings }: FooterProps) {
           <div className="lg:col-span-4 space-y-12">
             <div className="space-y-6">
               <Link href="/" className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-[1.25rem] flex items-center justify-center p-3 group transform -rotate-6 transition-transform hover:rotate-0">
+                <div className="w-14 h-14 bg-black/5 border border-black/10 rounded-[1.25rem] flex items-center justify-center p-3 group transform -rotate-6 transition-transform hover:rotate-0">
                    <Image src={settings?.logo_url || "/logo.png"} alt="Ozone Logo" width={40} height={40} className="object-contain group-hover:scale-110 transition-transform" />
                 </div>
                 <div className="flex flex-col">
-                   <h3 className="text-3xl font-black text-white tracking-tighter uppercase italic leading-none">
+                   <h3 className="text-3xl font-black text-slate-900 tracking-tighter uppercase italic leading-none">
                      OZONE<span className="text-primary">LABS</span>
                    </h3>
                    <span className="text-[9px] font-black text-slate-600 uppercase tracking-[0.4em] italic mt-1">EST. PRODUCTION</span>
@@ -90,7 +90,7 @@ export function Footer({ settings }: FooterProps) {
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                  <p className="text-[10px] font-black text-primary uppercase tracking-[0.5em] italic">LAB NETWORK</p>
-                 <div className="h-px flex-1 bg-white/5" />
+                 <div className="h-px flex-1 bg-black/5" />
               </div>
               <div className="flex gap-4">
                 {socials.map((s) => (
@@ -99,7 +99,7 @@ export function Footer({ settings }: FooterProps) {
                     href={s.url!}
                     target="_blank"
                     rel="noreferrer"
-                    className={`w-14 h-14 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-slate-500 transition-all duration-500 ${s.color} hover:text-white hover:border-transparent hover:scale-110 shadow-2xl hover:shadow-primary/20`}
+                    className={`w-14 h-14 rounded-2xl bg-black/[0.03] border border-black/10 flex items-center justify-center text-slate-500 transition-all duration-500 ${s.color} hover:text-slate-900 hover:border-transparent hover:scale-110 shadow-2xl hover:shadow-primary/20`}
                     title={s.id}
                   >
                     {s.icon}
@@ -108,13 +108,13 @@ export function Footer({ settings }: FooterProps) {
               </div>
             </div>
 
-            <div className="p-8 rounded-[2rem] bg-white/[0.02] border border-white/10 space-y-5 relative group overflow-hidden">
+            <div className="p-8 rounded-[2rem] bg-black/[0.02] border border-black/10 space-y-5 relative group overflow-hidden">
                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 blur-3xl pointer-events-none group-hover:bg-primary/20 transition-all" />
                <div className="flex items-center gap-4 text-primary relative z-10">
                  <Mail className="w-5 h-5" />
                  <span className="text-[10px] font-black uppercase tracking-[0.4em] italic">COMMUNICATION LINE</span>
                </div>
-               <a href={`mailto:${email}`} className="text-xl md:text-2xl font-black text-white hover:text-primary transition-colors block italic tracking-tighter relative z-10">
+               <a href={`mailto:${email}`} className="text-xl md:text-2xl font-black text-slate-900 hover:text-primary transition-colors block italic tracking-tighter relative z-10">
                  {email}
                </a>
             </div>
@@ -128,14 +128,14 @@ export function Footer({ settings }: FooterProps) {
                 {BRANCHES.map((branch) => (
                   <div key={branch.name} className="space-y-4 group">
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg">
+                      <div className="w-10 h-10 rounded-2xl bg-black/[0.03] border border-black/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-slate-900 transition-all duration-500 shadow-lg">
                         <MapPin className="w-5 h-5" />
                       </div>
-                      <span className="text-xl font-black text-white uppercase tracking-tighter italic">{branch.name}</span>
+                      <span className="text-xl font-black text-slate-900 uppercase tracking-tighter italic">{branch.name}</span>
                     </div>
                     <div className="pl-14 space-y-2">
                        <p className="text-[11px] text-slate-600 font-black uppercase tracking-tight italic">{branch.address}</p>
-                       <a href={`tel:${branch.phone.replace(/\s/g, '')}`} className="text-sm font-black text-slate-400 hover:text-primary transition-colors flex items-center gap-3 italic tracking-widest">
+                       <a href={`tel:${branch.phone.replace(/\s/g, '')}`} className="text-sm font-black text-slate-600 hover:text-primary transition-colors flex items-center gap-3 italic tracking-widest">
                          <Phone className="w-4 h-4 text-primary" />
                          {branch.phone}
                        </a>
@@ -159,7 +159,7 @@ export function Footer({ settings }: FooterProps) {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="group flex items-center gap-4 text-slate-500 hover:text-white text-xs font-black transition-all uppercase tracking-[0.2em] italic"
+                      className="group flex items-center gap-4 text-slate-500 hover:text-slate-900 text-xs font-black transition-all uppercase tracking-[0.2em] italic"
                     >
                       <Zap className="w-4 h-4 text-slate-800 group-hover:text-primary transition-colors" />
                       {link.label}
@@ -175,11 +175,11 @@ export function Footer({ settings }: FooterProps) {
              <div className="space-y-8">
                <h4 className="text-[10px] font-black text-slate-700 uppercase tracking-[0.5em] italic border-l-2 border-primary/40 pl-4">UPTIME</h4>
                <div className="space-y-4">
-                  <div className="flex justify-between items-center p-5 rounded-2xl bg-white/[0.02] border border-white/5 group hover:border-primary/20 transition-all duration-500">
+                  <div className="flex justify-between items-center p-5 rounded-2xl bg-black/[0.02] border border-black/5 group hover:border-primary/20 transition-all duration-500">
                     <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest italic">MON - SAT</span>
-                    <span className="text-[10px] font-black text-white uppercase italic tracking-widest">08:30 - 18:30</span>
+                    <span className="text-[10px] font-black text-slate-900 uppercase italic tracking-widest">08:30 - 18:30</span>
                   </div>
-                  <div className="flex justify-between items-center p-5 rounded-2xl bg-white/[0.02] border border-white/5 opacity-40">
+                  <div className="flex justify-between items-center p-5 rounded-2xl bg-black/[0.02] border border-black/5 opacity-40">
                     <span className="text-[10px] font-black text-slate-800 uppercase tracking-widest italic">SUNDAY</span>
                     <span className="text-[10px] font-black text-primary uppercase italic tracking-widest">OFFLINE</span>
                   </div>
@@ -195,7 +195,7 @@ export function Footer({ settings }: FooterProps) {
                      { label: 'VISA', icon: <CreditCard className="w-4 h-4" /> },
                      { label: 'BANK', icon: <ShieldCheck className="w-4 h-4" /> },
                    ].map(item => (
-                     <div key={item.label} className="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white/[0.02] border border-white/5 text-[9px] font-black text-slate-600 uppercase tracking-widest italic transition-all duration-500 hover:border-white/20 hover:text-slate-400 hover:bg-white/[0.04]">
+                     <div key={item.label} className="flex items-center gap-3 px-5 py-4 rounded-2xl bg-black/[0.02] border border-black/5 text-[9px] font-black text-slate-600 uppercase tracking-widest italic transition-all duration-500 hover:border-black/20 hover:text-slate-600 hover:bg-white/[0.04]">
                         <span className="text-primary">{item.icon}</span>
                         {item.label}
                      </div>
@@ -206,7 +206,7 @@ export function Footer({ settings }: FooterProps) {
              <Link
                 href={`https://wa.me/${waNumber}`}
                 target="_blank"
-                className="flex items-center justify-between w-full p-8 bg-primary text-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(239,68,68,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-500 group relative overflow-hidden"
+                className="flex items-center justify-between w-full p-8 bg-primary text-slate-900 rounded-[2.5rem] shadow-[0_20px_50px_rgba(239,68,68,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-500 group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="flex flex-col relative z-10">
@@ -219,7 +219,7 @@ export function Footer({ settings }: FooterProps) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+        <div className="mt-24 pt-12 border-t border-black/5 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
           <div className="flex gap-10 text-[9px] font-black uppercase tracking-[0.3em] text-slate-700 italic">
             <Link href="/privacy" className="hover:text-primary transition-colors">PRIVACY PROTOCOL</Link>
             <Link href="/terms" className="hover:text-primary transition-colors">TERMS OF SERVICE</Link>

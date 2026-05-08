@@ -38,13 +38,13 @@ export default async function PCBuildsAdminPage() {
             <AlertTriangle className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-3xl font-extrabold text-white">PC Builds — Setup Required</h1>
-            <p className="text-slate-400 text-sm">Database tables not found. Run the SQL migration first.</p>
+            <h1 className="text-3xl font-extrabold text-slate-900">PC Builds — Setup Required</h1>
+            <p className="text-slate-600 text-sm">Database tables not found. Run the SQL migration first.</p>
           </div>
         </div>
         <div className="p-8 bg-red-500/5 border border-red-500/20 rounded-[2rem] space-y-4">
           <p className="text-red-400 font-black text-sm uppercase tracking-widest">⚠️ Supabase SQL Editor-ෙ මේ SQL run කරන්න:</p>
-          <pre className="text-xs text-slate-300 bg-slate-950 border border-white/10 rounded-2xl p-6 overflow-x-auto whitespace-pre-wrap">
+          <pre className="text-xs text-slate-700 bg-slate-950 border border-black/10 rounded-2xl p-6 overflow-x-auto whitespace-pre-wrap">
 {`-- Run this in Supabase SQL Editor
 CREATE TABLE IF NOT EXISTS pc_builds (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
@@ -117,7 +117,7 @@ INSERT INTO pc_component_type_categories (component_type) VALUES
   ('CPU'),('GPU'),('RAM'),('Storage'),('Motherboard'),('PSU'),('Case'),('Cooler'),('Monitor'),('Other')
 ON CONFLICT (component_type) DO NOTHING;`}
           </pre>
-          <p className="text-slate-400 text-sm">SQL run කළාට පස්සේ මේ page reload කරන්න.</p>
+          <p className="text-slate-600 text-sm">SQL run කළාට පස්සේ මේ page reload කරන්න.</p>
         </div>
       </div>
     );
@@ -132,13 +132,13 @@ ON CONFLICT (component_type) DO NOTHING;`}
             <div className="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
               <Cpu className="w-6 h-6" />
             </div>
-            <h1 className="text-4xl font-extrabold tracking-tight text-white">PC Builds</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">PC Builds</h1>
           </div>
-          <p className="text-slate-400">Manage preset PC builds shown to customers. ({builds?.length || 0} builds)</p>
+          <p className="text-slate-600">Manage preset PC builds shown to customers. ({builds?.length || 0} builds)</p>
         </div>
         <Link
           href="/tarusha/dashboard/pc-builds/new"
-          className={cn(buttonVariants(), "bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl h-12 px-6 shadow-lg shadow-blue-600/20")}
+          className={cn(buttonVariants(), "bg-blue-600 hover:bg-blue-500 text-slate-900 font-bold rounded-xl h-12 px-6 shadow-lg shadow-blue-600/20")}
         >
           <Plus className="w-4 h-4 mr-2" /> New Build
         </Link>
@@ -150,7 +150,7 @@ ON CONFLICT (component_type) DO NOTHING;`}
           {builds.map((build) => {
             const style = CATEGORY_STYLES[build.category] || CATEGORY_STYLES.gaming;
             return (
-              <div key={build.id} className="bg-slate-900/40 border border-white/5 rounded-[2rem] p-6 space-y-4 hover:border-white/10 transition-all group">
+              <div key={build.id} className="bg-white/40 border border-black/5 rounded-[2rem] p-6 space-y-4 hover:border-black/10 transition-all group">
                 {/* Top Row */}
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -167,7 +167,7 @@ ON CONFLICT (component_type) DO NOTHING;`}
                         <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                       )}
                     </div>
-                    <h3 className="text-lg font-black text-white uppercase tracking-tight group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-lg font-black text-slate-900 uppercase tracking-tight group-hover:text-blue-400 transition-colors">
                       {build.name}
                     </h3>
                     {build.description && (
@@ -179,15 +179,15 @@ ON CONFLICT (component_type) DO NOTHING;`}
 
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="p-3 rounded-2xl bg-white/5 border border-white/5">
+                  <div className="p-3 rounded-2xl bg-black/5 border border-black/5">
                     <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Total Price</p>
-                    <p className="text-white font-black">
+                    <p className="text-slate-900 font-black">
                       {build.total_price ? `Rs. ${Number(build.total_price).toLocaleString()}` : 'TBD'}
                     </p>
                   </div>
-                  <div className="p-3 rounded-2xl bg-white/5 border border-white/5">
+                  <div className="p-3 rounded-2xl bg-black/5 border border-black/5">
                     <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Components</p>
-                    <p className="text-white font-black">
+                    <p className="text-slate-900 font-black">
                       {(build.pc_build_components as any)?.[0]?.count ?? 0} parts
                     </p>
                   </div>
@@ -205,7 +205,7 @@ ON CONFLICT (component_type) DO NOTHING;`}
                     <input type="hidden" name="id" value={build.id} />
                     <input type="hidden" name="is_featured" value={String(build.is_featured)} />
                     <Button variant="ghost" size="sm" type="submit"
-                      className={cn("rounded-xl border", build.is_featured ? "border-yellow-500/30 text-yellow-400 hover:bg-yellow-400/10" : "border-white/10 text-slate-500 hover:text-yellow-400")}
+                      className={cn("rounded-xl border", build.is_featured ? "border-yellow-500/30 text-yellow-400 hover:bg-yellow-400/10" : "border-black/10 text-slate-500 hover:text-yellow-400")}
                       title={build.is_featured ? "Unfeature" : "Feature on homepage"}
                     >
                       <Star className={cn("w-4 h-4", build.is_featured && "fill-yellow-400")} />
@@ -214,7 +214,7 @@ ON CONFLICT (component_type) DO NOTHING;`}
                   <form action={deletePCBuild}>
                     <input type="hidden" name="id" value={build.id} />
                     <Button variant="ghost" size="sm" type="submit"
-                      className="rounded-xl border border-white/10 text-slate-500 hover:text-red-400 hover:bg-red-400/10 hover:border-red-400/20"
+                      className="rounded-xl border border-black/10 text-slate-500 hover:text-red-400 hover:bg-red-400/10 hover:border-red-400/20"
                     >
                       <Trash2 className="w-4 h-4" />
                     </Button>
@@ -225,13 +225,13 @@ ON CONFLICT (component_type) DO NOTHING;`}
           })}
         </div>
       ) : (
-        <div className="py-32 flex flex-col items-center gap-6 text-center bg-slate-900/20 border border-white/5 rounded-[3rem]">
+        <div className="py-32 flex flex-col items-center gap-6 text-center bg-slate-100/20 border border-black/5 rounded-[3rem]">
           <Cpu className="w-16 h-16 text-slate-700" />
           <div>
-            <p className="text-white font-black text-xl uppercase tracking-tighter mb-2">No Builds Yet</p>
+            <p className="text-slate-900 font-black text-xl uppercase tracking-tighter mb-2">No Builds Yet</p>
             <p className="text-slate-500 text-sm">Create your first preset PC build to show customers.</p>
           </div>
-          <Link href="/tarusha/dashboard/pc-builds/new" className={cn(buttonVariants(), "bg-blue-600 text-white")}>
+          <Link href="/tarusha/dashboard/pc-builds/new" className={cn(buttonVariants(), "bg-blue-600 text-slate-900")}>
             <Plus className="w-4 h-4 mr-2" /> Create First Build
           </Link>
         </div>

@@ -31,12 +31,12 @@ export function WishlistNavButton() {
   return (
     <Link
       href="/wishlist"
-      className="relative w-16 h-16 rounded-[1.25rem] bg-white/[0.03] border border-white/5 flex items-center justify-center text-slate-800 hover:text-primary hover:bg-primary/10 hover:border-primary/40 transition-all duration-700 group shadow-2xl"
+      className="relative w-16 h-16 rounded-[1.25rem] bg-black/[0.03] border border-black/5 flex items-center justify-center text-slate-800 hover:text-primary hover:bg-primary/10 hover:border-primary/40 transition-all duration-700 group shadow-2xl"
       title="LAB BLUEPRINT ARCHIVE"
     >
       <Heart className={`w-7 h-7 transition-all duration-700 group-hover:scale-110 ${count > 0 ? 'fill-primary text-primary drop-shadow-[0_0_10px_rgba(239,68,68,0.5)]' : ''}`} />
       {count > 0 && (
-        <span className="absolute -top-2 -right-2 min-w-[24px] h-[24px] rounded-full bg-primary text-white text-[11px] font-black flex items-center justify-center px-1.5 shadow-[0_10px_30px_rgba(239,68,68,0.8)] animate-in zoom-in duration-700 italic border-2 border-[#050811]">
+        <span className="absolute -top-2 -right-2 min-w-[24px] h-[24px] rounded-full bg-primary text-slate-900 text-[11px] font-black flex items-center justify-center px-1.5 shadow-[0_10px_30px_rgba(239,68,68,0.8)] animate-in zoom-in duration-700 italic border-2 border-[#050811]">
           {count > 9 ? '9+' : count}
         </span>
       )}

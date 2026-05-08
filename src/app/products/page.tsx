@@ -146,7 +146,7 @@ export default async function ProductsPage(props: {
   })) || [];
 
   return (
-    <div className="min-h-screen bg-[#050811] pb-40">
+    <div className="min-h-screen bg-slate-50 pb-40">
       <InventoryHeader slides={slides || []} settings={headerSettings} />
 
       <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
@@ -156,9 +156,9 @@ export default async function ProductsPage(props: {
         )}
 
         {/* Modern Control Bar */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10 mb-20 p-8 bg-white/[0.02] border border-white/5 rounded-[3.5rem] relative z-20 shadow-2xl backdrop-blur-3xl">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10 mb-20 p-8 bg-black/[0.02] border border-black/5 rounded-[3.5rem] relative z-20 shadow-2xl backdrop-blur-3xl">
           <div className="flex items-center gap-6">
-            <div className="w-14 h-14 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-primary shadow-2xl">
+            <div className="w-14 h-14 rounded-2xl bg-black/[0.03] border border-black/10 flex items-center justify-center text-primary shadow-2xl">
                <Activity className="w-7 h-7" />
             </div>
             <SearchInput />
@@ -171,9 +171,9 @@ export default async function ProductsPage(props: {
                availableSpecs={formattedAvailableSpecs}
                availableBrands={formattedAvailableBrands}
              />
-             <div className="w-px h-10 bg-white/5 hidden sm:block" />
+             <div className="w-px h-10 bg-black/5 hidden sm:block" />
              <SortDropdown currentSort={sort} />
-             <div className="w-14 h-14 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-slate-800">
+             <div className="w-14 h-14 rounded-2xl bg-black/[0.03] border border-black/10 flex items-center justify-center text-slate-800">
                 <Terminal className="w-7 h-7" />
              </div>
           </div>
@@ -199,7 +199,7 @@ export default async function ProductsPage(props: {
               <div className="mt-32 flex justify-center">
                 <a
                   href={`?${new URLSearchParams({ ...Object.fromEntries(Object.entries(resolvedSearchParams).map(([k, v]) => [k, String(v)])), page: String(page + 1) }).toString()}`}
-                  className="group px-20 h-24 bg-primary rounded-[1.5rem] text-xs font-black uppercase tracking-[0.4em] text-white hover:shadow-[0_20px_50px_rgba(239,68,68,0.5)] transition-all duration-700 transform hover:-translate-y-2 italic flex items-center gap-6"
+                  className="group px-20 h-24 bg-primary rounded-[1.5rem] text-xs font-black uppercase tracking-[0.4em] text-slate-900 hover:shadow-[0_20px_50px_rgba(239,68,68,0.5)] transition-all duration-700 transform hover:-translate-y-2 italic flex items-center gap-6"
                 >
                   INITIALIZE NEXT SCAN ({totalCount - (offset + PAGE_SIZE)} UNITS)
                   <Activity className="w-6 h-6 group-hover:rotate-180 transition-transform duration-1000" />
@@ -208,8 +208,8 @@ export default async function ProductsPage(props: {
             )}
             
             {products && products.length === 0 && (
-              <div className="py-48 flex flex-col items-center justify-center gap-10 text-center bg-white/[0.01] rounded-[4rem] border border-white/5 border-dashed">
-                <div className="w-24 h-24 rounded-[2rem] bg-white/[0.03] flex items-center justify-center text-slate-800">
+              <div className="py-48 flex flex-col items-center justify-center gap-10 text-center bg-black/[0.01] rounded-[4rem] border border-black/5 border-dashed">
+                <div className="w-24 h-24 rounded-[2rem] bg-black/[0.03] flex items-center justify-center text-slate-800">
                    <ShoppingCart className="w-12 h-12" />
                 </div>
                 <div className="space-y-4">
@@ -218,7 +218,7 @@ export default async function ProductsPage(props: {
                 </div>
                 <Link 
                    href="/products"
-                   className="h-16 px-10 border border-white/10 bg-white/5 font-black uppercase tracking-[0.3em] italic text-xs rounded-2xl flex items-center justify-center hover:bg-white/10 transition-colors"
+                   className="h-16 px-10 border border-black/10 bg-black/5 font-black uppercase tracking-[0.3em] italic text-xs rounded-2xl flex items-center justify-center hover:bg-black/10 transition-colors"
                 >
                    RESET SCAN CORE
                 </Link>

@@ -18,7 +18,7 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
 
   if (allImages.length === 0) {
     return (
-      <div className="aspect-square rounded-[4rem] bg-[#050811] flex items-center justify-center border border-white/5 relative overflow-hidden shadow-2xl">
+      <div className="aspect-square rounded-[4rem] bg-slate-50 flex items-center justify-center border border-black/5 relative overflow-hidden shadow-2xl">
         <div className="absolute inset-0 bg-primary/5 blur-3xl pointer-events-none" />
         <Terminal className="w-24 h-24 text-slate-800 relative z-10" />
       </div>
@@ -31,7 +31,7 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
   return (
     <div className="space-y-10">
       {/* Main Image */}
-      <div className="aspect-square relative rounded-[5rem] overflow-hidden bg-[#050811] border border-white/10 group shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
+      <div className="aspect-square relative rounded-[5rem] overflow-hidden bg-slate-50 border border-black/10 group shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/10 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
         <Image
           key={activeIndex}
@@ -44,9 +44,9 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
         />
 
         {/* Lab Badge */}
-        <div className="absolute top-12 left-12 z-20 flex items-center gap-4 px-6 py-3 bg-black/60 backdrop-blur-3xl border border-white/10 rounded-2xl shadow-2xl">
+        <div className="absolute top-12 left-12 z-20 flex items-center gap-4 px-6 py-3 bg-black/60 backdrop-blur-3xl border border-black/10 rounded-2xl shadow-2xl">
            <Activity className="w-5 h-5 text-primary animate-pulse" />
-           <span className="text-[10px] font-black text-white uppercase tracking-[0.4em] italic leading-none">LAB CAPTURE ARCHIVE</span>
+           <span className="text-[10px] font-black text-slate-900 uppercase tracking-[0.4em] italic leading-none">LAB CAPTURE ARCHIVE</span>
         </div>
 
         {/* Navigation arrows - only show if multiple images */}
@@ -54,13 +54,13 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
           <>
             <button
               onClick={prev}
-              className="absolute left-10 top-1/2 -translate-y-1/2 w-16 h-16 rounded-[1.25rem] bg-black/60 backdrop-blur-3xl border border-white/10 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-primary hover:border-primary shadow-2xl z-30 transform hover:scale-110 active:scale-90"
+              className="absolute left-10 top-1/2 -translate-y-1/2 w-16 h-16 rounded-[1.25rem] bg-black/60 backdrop-blur-3xl border border-black/10 text-slate-900 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-primary hover:border-primary shadow-2xl z-30 transform hover:scale-110 active:scale-90"
             >
               <ChevronLeft className="w-8 h-8" />
             </button>
             <button
               onClick={next}
-              className="absolute right-10 top-1/2 -translate-y-1/2 w-16 h-16 rounded-[1.25rem] bg-black/60 backdrop-blur-3xl border border-white/10 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-primary hover:border-primary shadow-2xl z-30 transform hover:scale-110 active:scale-90"
+              className="absolute right-10 top-1/2 -translate-y-1/2 w-16 h-16 rounded-[1.25rem] bg-black/60 backdrop-blur-3xl border border-black/10 text-slate-900 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-primary hover:border-primary shadow-2xl z-30 transform hover:scale-110 active:scale-90"
             >
               <ChevronRight className="w-8 h-8" />
             </button>
@@ -74,7 +74,7 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
                 >
                   <div className={cn(
                     "h-1.5 transition-all duration-1000 rounded-full",
-                    i === activeIndex ? "bg-primary w-16 shadow-[0_0_20px_rgba(239,68,68,1)]" : "bg-white/10 hover:bg-white/30 w-6"
+                    i === activeIndex ? "bg-primary w-16 shadow-[0_0_20px_rgba(239,68,68,1)]" : "bg-black/10 hover:bg-white/30 w-6"
                   )} />
                 </button>
               ))}
@@ -94,7 +94,7 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
                 "aspect-square relative rounded-[2rem] overflow-hidden border-2 transition-all duration-700 relative",
                 i === activeIndex
                   ? "border-primary shadow-[0_15px_40px_rgba(239,68,68,0.3)] scale-105"
-                  : "border-white/5 bg-white/[0.01] hover:border-white/20 hover:bg-white/[0.03]"
+                  : "border-black/5 bg-black/[0.01] hover:border-black/20 hover:bg-black/[0.03]"
               )}
             >
               <Image

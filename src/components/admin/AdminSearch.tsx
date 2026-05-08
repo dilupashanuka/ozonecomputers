@@ -26,7 +26,7 @@ export function AdminSearch() {
 
   return (
     <div className="relative w-full max-w-sm">
-      <Search className={`absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors ${isPending ? 'text-blue-400 animate-pulse' : 'text-slate-400'}`} />
+      <Search className={`absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors ${isPending ? 'text-blue-400 animate-pulse' : 'text-slate-600'}`} />
       <Input
         type="text"
         placeholder="Search products by name or brand..."
@@ -35,7 +35,7 @@ export function AdminSearch() {
           const timer = setTimeout(() => handleSearch(e.target.value), 400);
           return () => clearTimeout(timer);
         }}
-        className="bg-white/5 border-white/10 text-white pl-10 h-10 w-full"
+        className="bg-black/5 border-black/10 text-slate-900 pl-10 h-10 w-full"
       />
     </div>
   );

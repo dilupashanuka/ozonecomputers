@@ -71,7 +71,7 @@ export default async function PCBuilderPage() {
   } catch (e) { categoryMapping = {}; }
 
   return (
-    <main className="min-h-screen bg-[#050811] pt-48 pb-64 relative overflow-hidden">
+    <main className="min-h-screen bg-slate-50 pt-48 pb-64 relative overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-primary/5 blur-[200px] rounded-full -mr-96 -mt-96 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full -ml-48 -mb-48 pointer-events-none" />
@@ -80,7 +80,7 @@ export default async function PCBuilderPage() {
         <div className="max-w-7xl mx-auto px-6 mb-24 text-primary bg-primary/10 border border-primary/20 p-12 rounded-[3rem] backdrop-blur-3xl animate-in zoom-in duration-1000 shadow-[0_0_80px_rgba(239,68,68,0.3)]">
           <div className="flex items-center gap-6 mb-6">
              <Activity className="w-8 h-8 animate-pulse text-primary" />
-             <p className="font-black uppercase tracking-[0.4em] italic text-lg text-white">LABORATORY SYNC FAILURE</p>
+             <p className="font-black uppercase tracking-[0.4em] italic text-lg text-slate-900">LABORATORY SYNC FAILURE</p>
           </div>
           <p className="text-[10px] font-black uppercase tracking-widest opacity-60 leading-relaxed italic ml-14">{debugError}</p>
         </div>
@@ -91,7 +91,7 @@ export default async function PCBuilderPage() {
           <Cpu className="w-5 h-5 animate-pulse" /> 
           <span className="text-[11px] font-black uppercase tracking-[0.5em] italic leading-none">BLUEPRINT ARCHITECT PROTOCOL</span>
         </div>
-        <h1 className="text-[5rem] md:text-[10rem] font-black text-white tracking-tighter uppercase italic leading-[0.8] drop-shadow-2xl">
+        <h1 className="text-[5rem] md:text-[10rem] font-black text-slate-900 tracking-tighter uppercase italic leading-[0.8] drop-shadow-2xl">
           ENGINEER YOUR<br />
           <span className="text-primary italic">CORE SYSTEM</span>
         </h1>
@@ -102,9 +102,9 @@ export default async function PCBuilderPage() {
            </p>
         </div>
         <div className="flex items-center justify-center gap-4 text-slate-900">
-           <div className="w-20 h-px bg-slate-900" />
+           <div className="w-20 h-px bg-slate-100" />
            <Zap className="w-5 h-5 text-primary animate-pulse" />
-           <div className="w-20 h-px bg-slate-900" />
+           <div className="w-20 h-px bg-slate-100" />
         </div>
       </div>
 

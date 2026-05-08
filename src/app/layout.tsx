@@ -46,8 +46,8 @@ export default async function RootLayout({
   const isAdminPage = pathname.includes("/tarusha/dashboard") || pathname.includes("/tharusha/dashboard");
 
   return (
-    <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
-      <body className={`${inter.variable} ${outfit.variable} font-sans min-h-screen flex flex-col bg-[#050811] text-foreground`} suppressHydrationWarning>
+    <html lang="en" className="light" style={{ colorScheme: 'light' }}>
+      <body className={`${inter.variable} ${outfit.variable} font-sans min-h-screen flex flex-col bg-slate-50 text-foreground`} suppressHydrationWarning>
         {!isAdminPage && <Navbar settings={settings} />}
         <main className="flex-1">
           {children}

@@ -16,7 +16,7 @@ export function HeroUploadForm() {
     >
       <AdminMediaUpload name="images" multiple required />
       
-      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold h-12 rounded-xl">
+      <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 text-slate-900 font-bold h-12 rounded-xl">
         Add to Showcase
       </Button>
     </form>

@@ -41,7 +41,7 @@ export function SearchInput() {
           const timer = setTimeout(() => handleSearch(term), 400);
           return () => clearTimeout(timer);
         }}
-        className="w-full bg-white/[0.01] border border-white/5 rounded-3xl pl-20 pr-10 py-6 text-[11px] font-black uppercase tracking-[0.5em] text-white focus:outline-none focus:border-primary/60 focus:bg-white/[0.03] transition-all duration-700 italic placeholder:text-slate-800 shadow-2xl"
+        className="w-full bg-black/[0.01] border border-black/5 rounded-3xl pl-20 pr-10 py-6 text-[11px] font-black uppercase tracking-[0.5em] text-slate-900 focus:outline-none focus:border-primary/60 focus:bg-black/[0.03] transition-all duration-700 italic placeholder:text-slate-800 shadow-2xl"
       />
       <div className="absolute right-8 top-1/2 -translate-y-1/2 opacity-0 group-focus-within:opacity-100 transition-all duration-700 translate-x-4 group-focus-within:translate-x-0">
          <div className="flex items-center gap-3">

@@ -50,34 +50,34 @@ export function AdminMediaUpload({
 
   return (
     <div className="space-y-4">
-      <div className={`aspect-video rounded-2xl border-2 border-dashed border-white/10 flex flex-col items-center justify-center text-slate-500 hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-pointer bg-white/5 relative overflow-hidden group`}>
+      <div className={`aspect-video rounded-2xl border-2 border-dashed border-black/10 flex flex-col items-center justify-center text-slate-500 hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-pointer bg-black/5 relative overflow-hidden group`}>
         {previews.length > 0 ? (
           <div className={`absolute inset-0 grid ${multiple ? 'grid-cols-2 md:grid-cols-4' : 'grid-cols-1'} gap-2 p-2`}>
             {previews.slice(0, multiple ? 4 : 1).map((preview, i) => (
-              <div key={i} className="relative w-full h-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+              <div key={i} className="relative w-full h-full rounded-xl overflow-hidden border border-black/10 shadow-2xl">
                 {preview.isVideo ? (
                   <video src={preview.url} className="w-full h-full object-cover" muted autoPlay loop playsInline />
                 ) : (
                   <Image src={preview.url} alt="Preview" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
                 )}
                 {multiple && i === 3 && previews.length > 4 && (
-                  <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center text-white font-black text-xs">
+                  <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center text-slate-900 font-black text-xs">
                     +{previews.length - 4} MORE
                   </div>
                 )}
               </div>
             ))}
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-               <span className="text-[10px] font-black text-white uppercase tracking-widest bg-blue-600 px-3 py-1 rounded-full shadow-xl">Click to Change</span>
+               <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest bg-blue-600 px-3 py-1 rounded-full shadow-xl">Click to Change</span>
             </div>
           </div>
         ) : (
           <div className="flex flex-col items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 text-slate-400 group-hover:text-blue-400 group-hover:scale-110 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-black/5 flex items-center justify-center border border-black/10 text-slate-600 group-hover:text-blue-400 group-hover:scale-110 transition-all">
                <Upload className="w-6 h-6" />
             </div>
             <div className="text-center px-6">
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors">Select Media Assets</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-slate-600 group-hover:text-slate-900 transition-colors">Select Media Assets</p>
               <p className="text-[9px] font-bold text-slate-600 uppercase tracking-tighter mt-1">Images or Videos supported</p>
             </div>
           </div>

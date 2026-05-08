@@ -34,7 +34,7 @@ export function SearchOverlay({ isOpen, onClose }: { isOpen: boolean, onClose: (
 
         <button 
           onClick={onClose}
-          className="absolute top-10 right-10 w-20 h-20 rounded-[2rem] bg-white/5 flex items-center justify-center text-white hover:bg-primary transition-all duration-500 group shadow-2xl"
+          className="absolute top-10 right-10 w-20 h-20 rounded-[2rem] bg-black/5 flex items-center justify-center text-slate-900 hover:bg-primary transition-all duration-500 group shadow-2xl"
         >
           <X className="w-10 h-10 group-hover:rotate-90 transition-transform" />
         </button>
@@ -46,7 +46,7 @@ export function SearchOverlay({ isOpen, onClose }: { isOpen: boolean, onClose: (
               ref={inputRef}
               type="text"
               placeholder="ENTER SEARCH QUERY..."
-              className="w-full bg-transparent border-b-8 border-white/5 py-12 pl-24 pr-12 text-5xl md:text-8xl font-black text-white placeholder:text-slate-900 focus:outline-none focus:border-primary transition-all uppercase tracking-tighter italic"
+              className="w-full bg-transparent border-b-8 border-black/5 py-12 pl-24 pr-12 text-5xl md:text-8xl font-black text-slate-900 placeholder:text-slate-900 focus:outline-none focus:border-primary transition-all uppercase tracking-tighter italic"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
@@ -64,12 +64,12 @@ export function SearchOverlay({ isOpen, onClose }: { isOpen: boolean, onClose: (
                     key={item.label}
                     href={`/products?q=${item.label}`}
                     onClick={onClose}
-                    className="group flex items-center gap-8 p-8 rounded-[2.5rem] bg-white/5 border border-white/5 hover:border-primary/50 transition-all duration-500 hover:translate-x-4"
+                    className="group flex items-center gap-8 p-8 rounded-[2.5rem] bg-black/5 border border-black/5 hover:border-primary/50 transition-all duration-500 hover:translate-x-4"
                   >
-                    <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-slate-500 group-hover:bg-primary group-hover:text-white transition-all shadow-xl">
+                    <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center text-slate-500 group-hover:bg-primary group-hover:text-slate-900 transition-all shadow-xl">
                       <item.icon className="w-8 h-8" />
                     </div>
-                    <span className="text-3xl font-black text-white tracking-tighter uppercase italic">{item.label}</span>
+                    <span className="text-3xl font-black text-slate-900 tracking-tighter uppercase italic">{item.label}</span>
                   </Link>
                 ))}
               </div>
@@ -86,9 +86,9 @@ export function SearchOverlay({ isOpen, onClose }: { isOpen: boolean, onClose: (
                     key={cat}
                     href={`/products?category=${cat.toLowerCase()}`}
                     onClick={onClose}
-                    className="p-10 rounded-[2.5rem] glass border-white/5 hover:border-primary text-center group transition-all duration-500 hover:-translate-y-2"
+                    className="p-10 rounded-[2.5rem] glass border-black/5 hover:border-primary text-center group transition-all duration-500 hover:-translate-y-2"
                   >
-                    <span className="text-sm font-black text-slate-500 group-hover:text-white transition-colors uppercase tracking-[0.3em] italic">{cat}</span>
+                    <span className="text-sm font-black text-slate-500 group-hover:text-slate-900 transition-colors uppercase tracking-[0.3em] italic">{cat}</span>
                   </Link>
                 ))}
               </div>

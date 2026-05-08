@@ -27,21 +27,21 @@ export default async function ComponentMappingPage() {
     <div className="space-y-8 max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div className="flex items-center gap-4">
         <Link href="/tarusha/dashboard/pc-builds"
-          className="w-10 h-10 flex items-center justify-center glass rounded-xl border border-white/10 text-slate-400 hover:text-white transition-all">
+          className="w-10 h-10 flex items-center justify-center glass rounded-xl border border-black/10 text-slate-600 hover:text-slate-900 transition-all">
           <ArrowLeft className="w-4 h-4" />
         </Link>
         <div>
-          <h1 className="text-3xl font-extrabold text-white tracking-tight">Component Category Mapping</h1>
-          <p className="text-slate-400 text-sm mt-1">
+          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">Component Category Mapping</h1>
+          <p className="text-slate-600 text-sm mt-1">
             Each PC Builder step ekata inventory category ekak assign karanna. 
             Ethakota customer e step-eke yamu wena wita, e category-eke products wissai show wenawa.
           </p>
         </div>
       </div>
 
-      <Card className="bg-slate-900/40 border-white/5">
-        <CardHeader className="border-b border-white/5">
-          <CardTitle className="text-white flex items-center gap-2">
+      <Card className="bg-white/40 border-black/5">
+        <CardHeader className="border-b border-black/5">
+          <CardTitle className="text-slate-900 flex items-center gap-2">
             <Link2 className="w-5 h-5 text-blue-400" />
             Component → Category Links
           </CardTitle>
@@ -54,7 +54,7 @@ export default async function ComponentMappingPage() {
 
               return (
                 <form key={type} action={upsertComponentMapping}
-                  className="flex items-center gap-4 px-6 py-4 hover:bg-white/[0.02] transition-colors">
+                  className="flex items-center gap-4 px-6 py-4 hover:bg-black/[0.02] transition-colors">
                   <input type="hidden" name="component_type" value={type} />
 
                   {/* Status dot */}
@@ -66,7 +66,7 @@ export default async function ComponentMappingPage() {
                       <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
                         <Cpu className="w-4 h-4 text-blue-400" />
                       </div>
-                      <span className="text-white font-bold text-sm uppercase tracking-widest">{type}</span>
+                      <span className="text-slate-900 font-bold text-sm uppercase tracking-widest">{type}</span>
                     </div>
                   </div>
 
@@ -77,11 +77,11 @@ export default async function ComponentMappingPage() {
                   <select
                     name="category_id"
                     defaultValue={mapping?.category_id || ''}
-                    className="flex-1 bg-white/5 border border-white/10 text-white h-10 rounded-xl px-3 text-sm focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all"
+                    className="flex-1 bg-black/5 border border-black/10 text-slate-900 h-10 rounded-xl px-3 text-sm focus:outline-none focus:border-blue-500/50 focus:bg-black/10 transition-all"
                   >
-                    <option value="" className="bg-slate-900 text-slate-400">— Not mapped (show all products) —</option>
+                    <option value="" className="bg-slate-100 text-slate-600">— Not mapped (show all products) —</option>
                     {categories?.map(cat => (
-                      <option key={cat.id} value={cat.id} className="bg-slate-900">
+                      <option key={cat.id} value={cat.id} className="bg-slate-100">
                         {cat.name}
                       </option>
                     ))}
@@ -101,7 +101,7 @@ export default async function ComponentMappingPage() {
 
       <div className="p-4 rounded-2xl bg-blue-500/5 border border-blue-500/10">
         <p className="text-xs text-blue-400 font-bold uppercase tracking-widest mb-1">💡 How it works</p>
-        <p className="text-slate-400 text-sm">
+        <p className="text-slate-600 text-sm">
           "CPU" → "Processors" assign karanna. Ethakota customer PC Builder-eke "Processor" step-eke yamu wena wita, 
           inventory-eke "Processors" category-eke thiyana products wissai display wenawa.
           Category assign natta okkoma products show wenawa.

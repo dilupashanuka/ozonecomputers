@@ -18,7 +18,7 @@ export function HeroVideo({ videos }: HeroVideoProps) {
   const hasText = activeVideo.title || activeVideo.subtitle;
   
   return (
-    <section className="relative w-full h-[90vh] overflow-hidden bg-[#050811]">
+    <section className="relative w-full h-[90vh] overflow-hidden bg-slate-50">
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -44,7 +44,7 @@ export function HeroVideo({ videos }: HeroVideoProps) {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="w-28 h-28 rounded-[2.5rem] bg-primary/20 backdrop-blur-2xl border border-primary/30 flex items-center justify-center mb-16 group-hover:scale-110 group-hover:rotate-12 transition-all cursor-pointer shadow-[0_20px_50px_rgba(239,68,68,0.4)]"
             >
-              <Play className="w-12 h-12 text-white fill-current ml-1" />
+              <Play className="w-12 h-12 text-slate-900 fill-current ml-1" />
             </motion.div>
 
             {activeVideo.title && (
@@ -52,7 +52,7 @@ export function HeroVideo({ videos }: HeroVideoProps) {
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="text-6xl md:text-[10rem] font-black text-white uppercase tracking-tighter max-w-7xl leading-[0.8] mb-10 drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] italic"
+                className="text-6xl md:text-[10rem] font-black text-slate-900 uppercase tracking-tighter max-w-7xl leading-[0.8] mb-10 drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] italic"
               >
                 {activeVideo.title}
               </motion.h2>
@@ -71,23 +71,23 @@ export function HeroVideo({ videos }: HeroVideoProps) {
           </div>
         )}
 
-        <div className="absolute bottom-16 left-12 right-12 flex flex-wrap items-center justify-between gap-10 z-10 hidden md:flex border-t border-white/10 pt-12">
+        <div className="absolute bottom-16 left-12 right-12 flex flex-wrap items-center justify-between gap-10 z-10 hidden md:flex border-t border-black/10 pt-12">
           <div className="flex items-center gap-16">
              <div className="flex items-center gap-6 group/item">
-               <div className="w-16 h-16 rounded-[1.25rem] bg-white/[0.03] border border-white/10 flex items-center justify-center text-primary group-hover/item:bg-primary group-hover/item:text-white transition-all duration-500 shadow-2xl">
+               <div className="w-16 h-16 rounded-[1.25rem] bg-black/[0.03] border border-black/10 flex items-center justify-center text-primary group-hover/item:bg-primary group-hover/item:text-slate-900 transition-all duration-500 shadow-2xl">
                   <ShieldCheck className="w-8 h-8" />
                </div>
                <div className="flex flex-col space-y-1">
-                  <span className="text-[10px] font-black text-white uppercase tracking-[0.4em] italic leading-none">VERIFIED LABS</span>
+                  <span className="text-[10px] font-black text-slate-900 uppercase tracking-[0.4em] italic leading-none">VERIFIED LABS</span>
                   <span className="text-[9px] font-black text-slate-600 uppercase tracking-[0.3em] italic">GENUINE PROTECTION</span>
                </div>
              </div>
              <div className="flex items-center gap-6 group/item">
-               <div className="w-16 h-16 rounded-[1.25rem] bg-white/[0.03] border border-white/10 flex items-center justify-center text-primary group-hover/item:bg-primary group-hover/item:text-white transition-all duration-500 shadow-2xl">
+               <div className="w-16 h-16 rounded-[1.25rem] bg-black/[0.03] border border-black/10 flex items-center justify-center text-primary group-hover/item:bg-primary group-hover/item:text-slate-900 transition-all duration-500 shadow-2xl">
                   <Zap className="w-8 h-8" />
                </div>
                <div className="flex flex-col space-y-1">
-                  <span className="text-[10px] font-black text-white uppercase tracking-[0.4em] italic leading-none">OVERCLOCKED</span>
+                  <span className="text-[10px] font-black text-slate-900 uppercase tracking-[0.4em] italic leading-none">OVERCLOCKED</span>
                   <span className="text-[9px] font-black text-slate-600 uppercase tracking-[0.3em] italic">PEAK EFFICIENCY</span>
                </div>
              </div>
@@ -97,9 +97,9 @@ export function HeroVideo({ videos }: HeroVideoProps) {
              <div className="flex flex-col items-end gap-3">
                 <div className="flex items-center gap-4">
                    <Activity className="w-4 h-4 text-primary animate-pulse" />
-                   <span className="text-[10px] font-black text-white uppercase tracking-[0.4em] italic">CORE SYSTEM ACTIVE</span>
+                   <span className="text-[10px] font-black text-slate-900 uppercase tracking-[0.4em] italic">CORE SYSTEM ACTIVE</span>
                 </div>
-                <div className="h-1.5 w-64 bg-white/[0.03] rounded-full overflow-hidden backdrop-blur-2xl border border-white/5 shadow-2xl">
+                <div className="h-1.5 w-64 bg-black/[0.03] rounded-full overflow-hidden backdrop-blur-2xl border border-black/5 shadow-2xl">
                   <motion.div 
                     className="h-full bg-primary shadow-[0_0_20px_rgba(239,68,68,0.8)]"
                     initial={{ width: 0 }}
@@ -108,7 +108,7 @@ export function HeroVideo({ videos }: HeroVideoProps) {
                   />
                 </div>
              </div>
-             <div className="w-16 h-16 rounded-[1.25rem] bg-white/[0.03] border border-white/10 flex items-center justify-center">
+             <div className="w-16 h-16 rounded-[1.25rem] bg-black/[0.03] border border-black/10 flex items-center justify-center">
                 <Terminal className="w-8 h-8 text-slate-800" />
              </div>
           </div>
@@ -117,11 +117,11 @@ export function HeroVideo({ videos }: HeroVideoProps) {
         {/* Lab UI Elements */}
         <div className="absolute top-12 left-12 flex items-center gap-6 opacity-40 z-10">
            <div className="w-3 h-3 rounded-full bg-primary animate-ping" />
-           <span className="text-[10px] font-black text-white uppercase tracking-[0.5em] italic">LIVE FEED</span>
+           <span className="text-[10px] font-black text-slate-900 uppercase tracking-[0.5em] italic">LIVE FEED</span>
         </div>
         <div className="absolute top-12 right-12 flex items-center gap-6 opacity-40 z-10">
-           <Globe className="w-4 h-4 text-white animate-spin-slow" />
-           <span className="text-[10px] font-black text-white uppercase tracking-[0.5em] italic">GLOBAL UPLINK</span>
+           <Globe className="w-4 h-4 text-slate-900 animate-spin-slow" />
+           <span className="text-[10px] font-black text-slate-900 uppercase tracking-[0.5em] italic">GLOBAL UPLINK</span>
         </div>
       </motion.div>
     </section>

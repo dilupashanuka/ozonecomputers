@@ -29,13 +29,13 @@ export function CategoryNavigator({ categories, currentInventory }: CategoryNavi
 
   return (
     <div className="space-y-16 mb-32 animate-in fade-in slide-in-from-bottom-12 duration-1000 relative z-10">
-      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/5 pb-10 gap-8">
+      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-black/5 pb-10 gap-8">
         <div className="space-y-6">
            <div className="inline-flex items-center gap-4 px-6 py-2.5 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-2xl shadow-2xl">
              <Activity className="w-4 h-4 text-primary animate-pulse" />
              <span className="text-[10px] font-black uppercase tracking-[0.5em] text-primary italic leading-none">SECTOR SEGMENTATION</span>
            </div>
-          <h2 className="text-6xl md:text-8xl font-black text-white tracking-tighter uppercase italic leading-none drop-shadow-2xl">
+          <h2 className="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter uppercase italic leading-none drop-shadow-2xl">
             ELITE <span className="text-primary italic">NODES</span>
           </h2>
           <p className="text-slate-700 text-[11px] font-black uppercase tracking-[0.5em] italic leading-none">SECURE A LABORATORY SECTOR TO ANALYZE ACTIVE DEPLOYMENTS.</p>
@@ -57,7 +57,7 @@ export function CategoryNavigator({ categories, currentInventory }: CategoryNavi
           >
             <Link 
               href={`/products?category=${category.slug}${currentInventory ? `&inventory=${currentInventory}` : ''}`}
-              className="group block relative aspect-[4/6] rounded-[4rem] overflow-hidden bg-white/[0.01] border border-white/5 hover:border-primary/60 transition-all duration-700 shadow-[0_20px_60px_rgba(0,0,0,0.8)] relative"
+              className="group block relative aspect-[4/6] rounded-[4rem] overflow-hidden bg-black/[0.01] border border-black/5 hover:border-primary/60 transition-all duration-700 shadow-[0_20px_60px_rgba(0,0,0,0.8)] relative"
             >
               <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-0" />
               
@@ -78,7 +78,7 @@ export function CategoryNavigator({ categories, currentInventory }: CategoryNavi
               
               <div className="absolute inset-x-0 bottom-0 p-10 space-y-4 z-20">
                 <div className="h-1 w-12 bg-primary/20 group-hover:w-full transition-all duration-1000 rounded-full" />
-                <h3 className="text-lg font-black text-white group-hover:text-primary transition-colors uppercase tracking-tighter leading-none italic drop-shadow-2xl">
+                <h3 className="text-lg font-black text-slate-900 group-hover:text-primary transition-colors uppercase tracking-tighter leading-none italic drop-shadow-2xl">
                   {category.name}
                 </h3>
                 <div className="flex items-center gap-4 text-[10px] font-black text-primary uppercase tracking-[0.4em] translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 italic">

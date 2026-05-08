@@ -42,7 +42,7 @@ export function MobileBottomNav({ settings }: { settings?: any }) {
       "md:hidden fixed bottom-8 left-1/2 -translate-x-1/2 z-[400] w-[95%] max-w-lg transition-all duration-700 ease-in-out",
       isVisible ? "translate-y-0 opacity-100" : "translate-y-32 opacity-0 pointer-events-none"
     )}>
-      <div className="bg-[#050811]/90 rounded-[2.5rem] px-8 py-5 border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] flex items-center justify-between backdrop-blur-3xl">
+      <div className="bg-slate-50/90 rounded-[2.5rem] px-8 py-5 border border-black/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] flex items-center justify-between backdrop-blur-3xl">
         {MOBILE_LINKS.map((link) => {
           const Icon = link.icon;
           const isActive = pathname === link.href;
@@ -55,7 +55,7 @@ export function MobileBottomNav({ settings }: { settings?: any }) {
             >
               <div className={cn(
                 "w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 relative overflow-hidden",
-                isActive ? "bg-primary text-white shadow-[0_15px_30px_rgba(239,68,68,0.4)] scale-110" : "text-slate-700 group-hover:text-white"
+                isActive ? "bg-primary text-slate-900 shadow-[0_15px_30px_rgba(239,68,68,0.4)] scale-110" : "text-slate-700 group-hover:text-slate-900"
               )}>
                 <Icon className={cn("w-6 h-6", isActive && "animate-pulse")} />
                 {isActive && (

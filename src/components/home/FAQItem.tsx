@@ -15,10 +15,10 @@ export function FAQItem({ question, answer }: FAQItemProps) {
   return (
     <div
       className={cn(
-        "rounded-[3rem] bg-white/[0.01] border transition-all duration-1000 cursor-pointer group shadow-2xl relative overflow-hidden",
+        "rounded-[3rem] bg-black/[0.01] border transition-all duration-1000 cursor-pointer group shadow-2xl relative overflow-hidden",
         isOpen 
-          ? 'border-primary/60 bg-white/[0.03] shadow-[0_40px_100px_rgba(0,0,0,0.8)]' 
-          : 'border-white/5 hover:border-primary/40 hover:bg-white/[0.02]'
+          ? 'border-primary/60 bg-black/[0.03] shadow-[0_40px_100px_rgba(0,0,0,0.8)]' 
+          : 'border-black/5 hover:border-primary/40 hover:bg-black/[0.02]'
       )}
       onClick={() => setIsOpen(!isOpen)}
     >
@@ -33,14 +33,14 @@ export function FAQItem({ question, answer }: FAQItemProps) {
            <div className={cn(
              "w-16 h-16 rounded-[1.5rem] flex items-center justify-center transition-all duration-1000",
              isOpen 
-               ? 'bg-primary text-white shadow-[0_0_30px_rgba(239,68,68,0.6)] scale-110' 
-               : 'bg-white/[0.03] border border-white/5 text-slate-800 group-hover:text-primary group-hover:bg-primary/10'
+               ? 'bg-primary text-slate-900 shadow-[0_0_30px_rgba(239,68,68,0.6)] scale-110' 
+               : 'bg-black/[0.03] border border-black/5 text-slate-800 group-hover:text-primary group-hover:bg-primary/10'
            )}>
               <HelpCircle className="w-8 h-8" />
            </div>
            <h4 className={cn(
              "text-2xl md:text-3xl font-black uppercase tracking-tighter italic transition-all duration-1000 leading-none",
-             isOpen ? 'text-primary' : 'text-white'
+             isOpen ? 'text-primary' : 'text-slate-900'
            )}>
              {question}
            </h4>
@@ -49,7 +49,7 @@ export function FAQItem({ question, answer }: FAQItemProps) {
           "shrink-0 w-16 h-16 rounded-[1.5rem] border-2 flex items-center justify-center transition-all duration-1000",
           isOpen 
             ? 'border-primary bg-primary/20 rotate-90 text-primary shadow-2xl' 
-            : 'border-white/5 bg-white/[0.02] group-hover:border-primary/40 text-slate-900 group-hover:text-primary'
+            : 'border-black/5 bg-black/[0.02] group-hover:border-primary/40 text-slate-900 group-hover:text-primary'
         )}>
           <ChevronRight className="w-8 h-8" />
         </div>
@@ -64,9 +64,9 @@ export function FAQItem({ question, answer }: FAQItemProps) {
       >
         <div className="px-14 pb-14 md:px-20 md:pb-20">
            <div className="flex items-center gap-6 mb-10">
-              <div className="h-px flex-1 bg-white/5" />
+              <div className="h-px flex-1 bg-black/5" />
               <Activity className="w-4 h-4 text-primary animate-pulse" />
-              <div className="h-px w-20 bg-white/5" />
+              <div className="h-px w-20 bg-black/5" />
            </div>
            <p className="text-slate-600 text-xl md:text-2xl font-black uppercase tracking-tight italic leading-relaxed max-w-4xl">
              {answer}

@@ -15,13 +15,13 @@ export default async function NewProductPage(props: {
       <div className="flex items-center gap-4">
         <Link 
           href="/tarusha/dashboard/products"
-          className="p-2 rounded-xl bg-white/5 border border-white/5 text-slate-400 hover:text-white transition-colors"
+          className="p-2 rounded-xl bg-black/5 border border-black/5 text-slate-600 hover:text-slate-900 transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
         </Link>
         <div>
-          <h1 className="text-4xl font-extrabold tracking-tight text-white">Add New Product</h1>
-          <p className="text-slate-400">Expand your store inventory with high-end tech.</p>
+          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">Add New Product</h1>
+          <p className="text-slate-600">Expand your store inventory with high-end tech.</p>
         </div>
       </div>
 

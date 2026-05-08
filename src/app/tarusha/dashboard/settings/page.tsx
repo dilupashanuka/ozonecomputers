@@ -19,17 +19,17 @@ export default async function SettingsPage() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-extrabold tracking-tight text-white">Global Configuration</h1>
-        <p className="text-slate-400 font-medium">Manage your brand identity and system-wide parameters.</p>
+        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">Global Configuration</h1>
+        <p className="text-slate-600 font-medium">Manage your brand identity and system-wide parameters.</p>
       </div>
 
       <form action={updateSettings}>
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Brand Identity */}
           <div className="lg:col-span-2 space-y-8">
-            <Card className="bg-slate-900/40 border-white/5 backdrop-blur-md">
+            <Card className="bg-white/40 border-black/5 backdrop-blur-md">
               <CardHeader>
-                <CardTitle className="text-white flex items-center gap-2">
+                <CardTitle className="text-slate-900 flex items-center gap-2">
                   <Globe className="w-5 h-5 text-blue-400" /> Branding & SEO
                 </CardTitle>
                 <CardDescription className="text-slate-500">Configure how your business appears online.</CardDescription>
@@ -40,7 +40,7 @@ export default async function SettingsPage() {
                   <Input 
                     name="site_name" 
                     defaultValue={settings?.site_name || 'SL HUB COMPUTER'} 
-                    className="bg-white/5 border-white/10 text-white font-bold h-12" 
+                    className="bg-black/5 border-black/10 text-slate-900 font-bold h-12" 
                   />
                 </div>
 
@@ -49,7 +49,7 @@ export default async function SettingsPage() {
                   <Textarea 
                     name="address" 
                     defaultValue={settings?.address || 'Deiyandara, Sri Lanka'} 
-                    className="bg-white/5 border-white/10 text-white h-20 resize-none" 
+                    className="bg-black/5 border-black/10 text-slate-900 h-20 resize-none" 
                   />
                 </div>
 
@@ -59,7 +59,7 @@ export default async function SettingsPage() {
                     name="about_text" 
                     defaultValue={settings?.about_text || ''} 
                     placeholder="Tell your customers about your business history and mission..."
-                    className="bg-white/5 border-white/10 text-white h-40 resize-none" 
+                    className="bg-black/5 border-black/10 text-slate-900 h-40 resize-none" 
                   />
                 </div>
 
@@ -68,15 +68,15 @@ export default async function SettingsPage() {
                   <AdminMediaUpload name="logo" />
                 </div>
                 
-                <div className="pt-6 border-t border-white/10 space-y-6">
-                  <h3 className="font-bold text-white">Homepage Hero Configuration</h3>
+                <div className="pt-6 border-t border-black/10 space-y-6">
+                  <h3 className="font-bold text-slate-900">Homepage Hero Configuration</h3>
                   
                   <div className="space-y-2">
                     <Label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Main Heading</Label>
                     <Input 
                       name="hero_title" 
                       defaultValue={settings?.hero_title || 'The New Experience of Technology'} 
-                      className="bg-white/5 border-white/10 text-white font-bold h-12" 
+                      className="bg-black/5 border-black/10 text-slate-900 font-bold h-12" 
                     />
                   </div>
                   
@@ -85,7 +85,7 @@ export default async function SettingsPage() {
                     <Textarea 
                       name="hero_subtitle" 
                       defaultValue={settings?.hero_subtitle || 'Your trusted partner for high-quality branded computers and professional tech services.'} 
-                      className="bg-white/5 border-white/10 text-white h-20 resize-none" 
+                      className="bg-black/5 border-black/10 text-slate-900 h-20 resize-none" 
                     />
                   </div>
                   
@@ -95,23 +95,23 @@ export default async function SettingsPage() {
                       name="hero_video_url" 
                       defaultValue={settings?.hero_video_url || ''} 
                       placeholder="Direct link to mp4 file"
-                      className="bg-white/5 border-white/10 text-blue-400 font-mono text-xs h-10" 
+                      className="bg-black/5 border-black/10 text-blue-400 font-mono text-xs h-10" 
                     />
                     <p className="text-[10px] text-slate-500">If provided, changes the "PC Build Guide" button to a "Watch Video" button.</p>
                   </div>
                 </div>
                 
-                <div className="space-y-2 pt-4 border-t border-white/10">
+                <div className="space-y-2 pt-4 border-t border-black/10">
                   <Label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">PC Builder Background Image</Label>
-                  <p className="text-xs text-slate-400 mb-2">Upload a high-quality landscape image for the PC Builder section.</p>
+                  <p className="text-xs text-slate-600 mb-2">Upload a high-quality landscape image for the PC Builder section.</p>
                   <Input 
                     type="file" 
                     name="pc_builder_image" 
                     accept="image/*" 
-                    className="bg-white/5 border-white/10 text-white" 
+                    className="bg-black/5 border-black/10 text-slate-900" 
                   />
                   {settings?.pc_builder_image && (
-                    <div className="mt-2 text-xs text-slate-400 flex items-center gap-2">
+                    <div className="mt-2 text-xs text-slate-600 flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-green-500"></div> Custom image is currently active
                     </div>
                   )}
@@ -119,9 +119,9 @@ export default async function SettingsPage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-slate-900/40 border-white/5 backdrop-blur-md">
+            <Card className="bg-white/40 border-black/5 backdrop-blur-md">
               <CardHeader>
-                <CardTitle className="text-white flex items-center gap-2">
+                <CardTitle className="text-slate-900 flex items-center gap-2">
                   <Share2 className="w-5 h-5 text-purple-400" /> Social Media & Contact Links
                 </CardTitle>
                 <CardDescription className="text-slate-500">Manage all your external social media and community links.</CardDescription>
@@ -133,7 +133,7 @@ export default async function SettingsPage() {
                     name="facebook_url" 
                     defaultValue={settings?.facebook_url || ''} 
                     placeholder="https://facebook.com/..."
-                    className="bg-white/5 border-white/10 text-white" 
+                    className="bg-black/5 border-black/10 text-slate-900" 
                   />
                 </div>
                 <div className="space-y-2">
@@ -142,7 +142,7 @@ export default async function SettingsPage() {
                     name="instagram_url" 
                     defaultValue={settings?.instagram_url || ''} 
                     placeholder="https://instagram.com/..."
-                    className="bg-white/5 border-white/10 text-white" 
+                    className="bg-black/5 border-black/10 text-slate-900" 
                   />
                 </div>
                 <div className="space-y-2">
@@ -151,7 +151,7 @@ export default async function SettingsPage() {
                     name="tiktok_url" 
                     defaultValue={settings?.tiktok_url || ''} 
                     placeholder="https://tiktok.com/@..."
-                    className="bg-white/5 border-white/10 text-white" 
+                    className="bg-black/5 border-black/10 text-slate-900" 
                   />
                 </div>
                 <div className="space-y-2">
@@ -160,7 +160,7 @@ export default async function SettingsPage() {
                     name="youtube_url" 
                     defaultValue={settings?.youtube_url || ''} 
                     placeholder="https://youtube.com/..."
-                    className="bg-white/5 border-white/10 text-white" 
+                    className="bg-black/5 border-black/10 text-slate-900" 
                   />
                 </div>
                 <div className="space-y-2">
@@ -169,7 +169,7 @@ export default async function SettingsPage() {
                     name="twitter_url" 
                     defaultValue={settings?.twitter_url || ''} 
                     placeholder="https://x.com/..."
-                    className="bg-white/5 border-white/10 text-white" 
+                    className="bg-black/5 border-black/10 text-slate-900" 
                   />
                 </div>
                 <div className="space-y-2">
@@ -178,7 +178,7 @@ export default async function SettingsPage() {
                     name="discord_url" 
                     defaultValue={settings?.discord_url || ''} 
                     placeholder="https://discord.gg/..."
-                    className="bg-white/5 border-white/10 text-white" 
+                    className="bg-black/5 border-black/10 text-slate-900" 
                   />
                 </div>
                 <div className="space-y-2">
@@ -187,7 +187,7 @@ export default async function SettingsPage() {
                     name="reddit_url" 
                     defaultValue={settings?.reddit_url || ''} 
                     placeholder="https://reddit.com/r/..."
-                    className="bg-white/5 border-white/10 text-white" 
+                    className="bg-black/5 border-black/10 text-slate-900" 
                   />
                 </div>
                 <div className="space-y-2">
@@ -196,15 +196,15 @@ export default async function SettingsPage() {
                     name="twitch_url" 
                     defaultValue={settings?.twitch_url || ''} 
                     placeholder="https://twitch.tv/..."
-                    className="bg-white/5 border-white/10 text-white" 
+                    className="bg-black/5 border-black/10 text-slate-900" 
                   />
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-slate-900/40 border-white/5 backdrop-blur-md">
+            <Card className="bg-white/40 border-black/5 backdrop-blur-md">
               <CardHeader>
-                <CardTitle className="text-white flex items-center gap-2">
+                <CardTitle className="text-slate-900 flex items-center gap-2">
                   <Phone className="w-5 h-5 text-green-400" /> Support Channels
                 </CardTitle>
                 <CardDescription className="text-slate-500">Define primary contact methods for customers.</CardDescription>
@@ -215,7 +215,7 @@ export default async function SettingsPage() {
                   <Input 
                     name="whatsapp_number" 
                     defaultValue={settings?.whatsapp_number || '+94710678944'} 
-                    className="bg-white/5 border-white/10 text-green-400 font-mono" 
+                    className="bg-black/5 border-black/10 text-green-400 font-mono" 
                   />
                 </div>
                 <div className="space-y-2">
@@ -223,7 +223,7 @@ export default async function SettingsPage() {
                   <Input 
                     name="phone_number" 
                     defaultValue={settings?.phone_number || '071 067 8944'} 
-                    className="bg-white/5 border-white/10 text-white font-mono" 
+                    className="bg-black/5 border-black/10 text-slate-900 font-mono" 
                   />
                 </div>
                 <div className="space-y-2 md:col-span-2">
@@ -232,7 +232,7 @@ export default async function SettingsPage() {
                     name="email" 
                     type="email"
                     defaultValue={settings?.email || 'slhub9@gmail.com'} 
-                    className="bg-white/5 border-white/10 text-white font-mono" 
+                    className="bg-black/5 border-black/10 text-slate-900 font-mono" 
                     placeholder="your@email.com"
                   />
                 </div>
@@ -242,20 +242,20 @@ export default async function SettingsPage() {
 
           {/* System Settings */}
           <div className="space-y-8">
-            <Card className="bg-slate-900/40 border-white/5 backdrop-blur-md">
+            <Card className="bg-white/40 border-black/5 backdrop-blur-md">
               <CardHeader>
-                <CardTitle className="text-white">System Control</CardTitle>
+                <CardTitle className="text-slate-900">System Control</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5">
+                <div className="flex items-center justify-between p-4 rounded-xl bg-black/5 border border-black/5">
                   <div className="space-y-0.5">
-                    <Label className="text-white font-bold">Maintenance Mode</Label>
+                    <Label className="text-slate-900 font-bold">Maintenance Mode</Label>
                     <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Hide store frontend</p>
                   </div>
                   <Switch name="maintenance_mode" defaultChecked={settings?.maintenance_mode} />
                 </div>
 
-                <Button type="submit" className="w-full h-14 bg-blue-600 hover:bg-blue-500 text-white font-black tracking-widest rounded-2xl shadow-xl shadow-blue-600/20 transition-all active:scale-95 uppercase">
+                <Button type="submit" className="w-full h-14 bg-blue-600 hover:bg-blue-500 text-slate-900 font-black tracking-widest rounded-2xl shadow-xl shadow-blue-600/20 transition-all active:scale-95 uppercase">
                   <Save className="w-4 h-4 mr-2" /> Commit Changes
                 </Button>
               </CardContent>
@@ -268,8 +268,8 @@ export default async function SettingsPage() {
                     <ShieldAlert className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <p className="text-sm font-bold text-white">Critical Access</p>
-                    <p className="text-xs text-slate-400 leading-relaxed">
+                    <p className="text-sm font-bold text-slate-900">Critical Access</p>
+                    <p className="text-xs text-slate-600 leading-relaxed">
                       Changes here affect the entire platform immediately. Be careful when updating contact details or enabling maintenance mode.
                     </p>
                   </div>
